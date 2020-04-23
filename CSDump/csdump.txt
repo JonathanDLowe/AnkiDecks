@@ -1,0 +1,64 @@
+"<b>Bold </b><span style=""font-style: italic;"">Italics</span><b style=""font-style: italic;""> </b><u>Underline</u>&nbsp;<sup>Super</sup>&nbsp;<sub>Sub</sub><div><sub>newline</sub></div>"	
+(Concurrency)CountDownLatch	
+(Concurrency)notify()	
+(Concurrency)Executor&nbsp;	Primary Abstraction for task execution. Not Thread. Decouples task submission from task execution
+(Concurrency)wait()&nbsp;	Deprecated Lock is per thread<div>Object waitObject;</div><div>synchronized(waitObject) { // thread 1</div><div>&nbsp; &nbsp; if (condition) {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; waitObject.wait();</div><div>&nbsp; &nbsp; }</div><div>}</div><div><div>synchronized(waitObject) { // thread 2</div><div>&nbsp; &nbsp; waitObject.notify(); //notifyAll() for 1 or all threads</div><div>}</div></div>
+Java Memory Model	
+ThreadPoolExecutor	"Designed for extension<div>""hooks"" for subclasses to override</div><div>beforeExecute()</div><div>afterExecute()</div><div>terminated()</div>"
+volatile	
+ThreadLocal	
+ConcurrentMap	
+QueueingFuture&lt;V&gt;	Subclass of FutureTask
+ExecutorService	Extends Executor<div>addslifecycle management</div><div>3 lifecycle states: running, shutting down, terminated</div>
+FutureTask	
+Future	
+Callable	
+RejectedExecutionHandler	
+SynchronousQueue	
+Algorithms	Input<div>Output</div><div>Definiteness</div><div>Finiteness</div><div>Correctness</div><div>Time Complexity</div><div>Space Complexity</div><div>- Instruction</div><div>- Data</div><div>- Environment</div>
+Data Structures	Graphs<div>Arrays</div><div>Lists</div><div>Maps</div><div>Sets</div><div>Stacks</div><div>Queues</div><div>Trees</div>
+HashMap vs LinkedHashMap vs TreeMap	HashMap - key order indeterminant<div>LinkedHashMap - key order 'predicatable i.e. insertion</div><div>TreeMap - keys sorted by 'natural' order or Comparator</div><div><br></div>
+HashSet vs LinkedHashSet vs TreeSet	HashSet - order indeterminant and not constant<div>LinkedHashSet - order based on insertion</div><div>TreeSet - ordered by 'natural ordering' or Comparator</div>
+DAG	Directed Acyclic Graph
+Algorithm Features	1) Correctness<div>2) Maintainability</div><div>3) Efficiency</div><div>4) Can we do better?</div>
+Breadth First Search(BFS)	Search algorithm that finds items nearest origin first<div>Performed on Trees or graphs</div><div>Utilizes a queue</div>
+Depth First Search(DFS)	Search algorithm that seeks the item as far down a path as it can before back tracking and trying another path<div>Performed on trees and graphs</div><div>Utilizes a stack</div>
+Search Algorithms	Linear Search O(N)<div>BinarySearch O(log n)</div><div>Interpolation Search</div><div>Trees and Graphs</div><div>Breadth First Search</div><div>Depth First Search</div>
+Binary Tree	DS where every node has two children(left&amp;right)<div>Nodes with no children are call left nodes.</div><div>Algorithms</div><div>Traversal: Preorder, Inorder, Postorder, Level Order</div><div>Search: BFS, DFS</div>
+Balanced Binary Tree	A binary tree in which each nodes' left and right subtrees' heights differ by no more 1
+ADT(Definition)	Abstract Data Type
+Optimization Technique<div>B.U.D.</div>	B. Bottlenecks<div>&nbsp; &nbsp; Identify bottlenecks and optimize those parts</div><div>U. Unnecessary work</div><div>Look for ways to remove repeated work or unnecessary type conversion</div><div><br></div><div>D. Duplicate work</div><div>&nbsp; &nbsp; Memoization, caching, lookup tables</div>
+Trie	a.k.a prefix tree. A trie is a kind of search tree. Instead of storing key in each node, the key is derived from the position in the tree, and a flag that denotes whether the position is a whole key.
+Optimization Method<div>D.I.Y.</div>	<div>Do It Yourself<br>Use big examples</div><div>Brain intuits decent algorithms</div><div>Reverse engineer what brain did.</div>
+Optimization Method<div>Space/ Time tradeoffs</div>	Speed at the expense of memory<div>Consider if a lookup table(array|hashmap) is worth the setup</div><div>Look up tables, precalculation, memoization</div>
+Tree Traversal Methods	Preorder - process node before left and right<div>Inorder - process process left node, curr, then right</div><div>PostOrder - process node after left and right</div><div>Level order - Process nodes n away from root before moving to n+1 i.e. layers or levels.</div>
+Post-Order Traversal	Process 'this' node after both its left and right child nodes.
+Preorder Traversal	Process 'this' node before both its left and right child nodes.
+Inorder Traversal	Process 'this' nodes left nodte, itself, then right child node.
+Level Order	Process nodes at each 'level' before proceeding to the next node.&nbsp;
+Big O Notation	Big O only cares about the worst case<div>-&nbsp; &nbsp; for each space and time complexity</div><div>Drop constants</div><div>Drop non-dominant terms</div><div>Add vs Multiply</div><div>Amortized time: worst case happens rarely</div><div>Recursive runtime oftent O(branches<sup>depth</sup>)</div><div>- mention expected case, but Big&nbsp; O worst case</div><div>lines are adding</div><div>nested loops are multiplying</div>
+Defensive Copy	
+Proxy Pattern	
+Strategy Pattern	Defines a family of algorithms, encapsulates each one, and makes them interchangable.<div>Strategy lets the algorithm vary independently from clients that use it.</div>
+Template Method Pattern	Definte the skeleton of an algorithm in an operation, deferring some step to subclasses.<div>Template method lets subclasses redefine certain steps of an algorithm without changing the algorithms structure.</div><div><br></div>
+Iterator Pattern	Provides a way to access the elements of an aaggregate object sequentially without exposing the internal structure/underlying representation of the DS.
+Composite Pattern	Compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and composition of object uniformly.
+State Pattern	Allow an object to alter its behavior when its internal state changes.<div>The object will appear to change its class.</div>
+Observer Pattern	Defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
+Decorator Pattern	Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
+Abstract Factory Pattern	Provides an interface for creating familites of related or dependent objects without specifying their concrete classes.
+Factory Method Pattern	Defines an interface for creating an object, but let subclasses decide which class to instantiate a class defer instantiation to the subclasses.
+Singleton Pattern	Ensure a class only has one instance and provide a global point of acces to it.<div>Synchroned methods</div><div>private constuctor</div><div>Accessed by instance()</div><div>Instance() returns reference to private, static, final far of type of singleton class</div><div>May employ double-checked locking</div><div>volatile in Java</div>
+Command Pattern	Encapsulates a request as an object, therby letting you parameterize clients with different request, queue, or log requests, and support undoable ops.
+Adaptor Pattern	Converts the interface of a class into another interface clients expects.<div>Lets classes work together that couldn't otherwise because of incompatible interfaces.</div>
+Facade Pattern	Provides a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use. Also used to simplify complex interface
+Builder Pattern	Solutions to massive constuctor(telescoping)<div>Parameters passed to builder object often with method chaining</div><div>Mutable class that can spit out a complete immutable object</div><div>Tightly couple to resulting class</div><div>In practice, bundled as an inner class</div>
+Model-View-Controller Pattern(MVC)	
+Model-View-ViewModel Pattern	
+RMI	Remote Method Invocation
+Mediator Pattern	
+Flyweight Pattern	
+Visitor Pattern	
+Factory Pattern	Creates objects not known at runtime<div>returns new ojbects that have a common abstract class/interface</div><div>Often implemented with static methods</div>
+OOP Core Concepts	Abstraction<div>Encapsulation</div><div>Polymorphism</div><div>Inheritance</div><div>Composition</div>
+OOP Principles	Encapsulate what varies<div>Favor composition over inheritance</div><div>Program to interfaces, not implementations</div><div>Strive for loosely couple designs between objects that interace</div><div>Classes should be open to extension, and closed to modification.</div><div>Depend on abstaction, not concrete classes</div><div>Only talk to your friends - *what?&nbsp;</div><div>Don't call us, we'll call you - *huh?</div><div>A class should have one reason to change.</div>
