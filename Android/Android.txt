@@ -1,0 +1,86 @@
+ActivityScenario	
+ActivityManager.RecentTaskInfo	
+Canvas	ClipOutPath|Rect()&nbsp; &nbsp; getHeight()|Width()<div>clopPath|Rect()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; save() | restore()<br>Drawing: scale()&nbsp; &nbsp; rotate()&nbsp; &nbsp; translate()&nbsp; &nbsp; skew()</div><div>drawARGB(int,int,int,int) - full canvas with color</div><div>drawArc(...)&nbsp; &nbsp; drawBitmap(...)&nbsp; &nbsp; drawCircle() drawColor()</div><div>drawLine()&nbsp; &nbsp;drawLines()&nbsp; &nbsp; drawOval()&nbsp; &nbsp; drawPaint()</div><div>drawPath() drawPoint()&nbsp; &nbsp;drawPoints()</div><div>drawRect()&nbsp; &nbsp;drawRoundRect() drawText()</div><div>drawTextOnPath()</div>
+Path	addArc() addCircle() addOval()<div>addPath() adREct() addRoundRect()</div><div>arcTo() cubicTo() lineTo() quadTo()</div><div><br></div><div>close()</div><div>rewind()</div><div>reset()</div>
+Formatter	%[arg_index$][flags][width][.precision] conversion<div>'b' 'B' boolean</div><div>'h' 'H' hashCode() toHexString()</div><div>'s' 'S' String</div><div>'c' 'C' Unicode character</div><div>'d' decimal</div><div>'o' octal</div><div>'x' 'X' hexadecimal</div><div>'e' 'E' scientific notation</div><div>'f' float</div><div>'t' 'T' date/time</div>
+android.location.*	android.location.*<div>- Address</div><div>- Geocode</div><div>- Location</div>
+MotionEvent	ACTION_DOWN, ACTION_MOVE, ACTION_UP<div>often delivered via onTouchEvent(MotionEvent)</div><div>getX() | getX(int pointerIdx) | getY() | getY(int)</div><div>getAction() | getActionButton() | getActionIndex()</div><div>getActionMasked()</div><div>getPointerId()</div><div>getPressure()</div>
+AsyncTask&lt;T,U,V&gt;	AsyncTask&lt;T,U,V&gt; T - param, U - Progress, V - Result<div>boolean cancel(boolean mayInterrupt)</div><div>AsyncTask execute(T)</div><div>AsyncTask executeOnExecutor( Executor, T)</div><div>getStatus() // AsyncTask.Status</div><div>get() block/wait get(long, TimeUnit) wait for a time</div><div>onPreExecute() | onPostExecute() // UI Thread</div><div>publishProgress() //background onProgressUpdate() //UI</div><div>&gt;= HoneyComb, serially. Use executor for parallel execution.&nbsp;</div>
+Settings	android.provider.Settings<div>Setting provider contains globals</div><div>system-level device preferences</div><div>constains many(all?) Action constants for launching a setting activity</div>
+ColorSpace	ColorSpace.Adaptation<div>ColorSpace.Connector</div><div>ColorSpace.Model</div><div>ColorSpace.Named</div>
+Color	BLACK|BLUE|CYAN|DKGRAY|GREEN...<div>HSVToColor(float[]) | HSVToColor(float alpha, float[])</div><div>RGBToHSV(int red, int green, int blue, float[])</div><div>argb(int alpha, int red, int green, int blue)</div><div>argb(float alpha, float red, float green, float blue)<br></div><div>alpha() red() blue() green()</div><div>Static Helpers <br>alpha(Color) red(Color) blue(Color) green(Color)</div><div>Color convert(ColorSpace&nbsp;colorSpace)<br></div><div>Many more ColorSpace conversion functions</div>
+Paint	Paint.Style.STROKE&nbsp; &nbsp; setTypeface(TypeFace)<div>Paint.Join.ROUND&nbsp; &nbsp; setTextSize(float)</div><div>Paint.Cap.ROUND&nbsp; &nbsp;&nbsp;</div><div>setARGB(int, int, int, int)</div><div>setColor(int color)</div><div>setStrokeCap(Paint.Cap)</div><div>setStrokeJoin(Paint.Join)</div><div>setStrokeWidth(float)<br><div><br></div></div>
+SurfaceView	SurfaceHolder getHolder()<div>draw(Canvas)</div>
+Surface	boolean isValid()<div>lockCanvas(Rect inOutDirty) gets a Canvas for&nbsp; drawing into Surface unlockCanvasAndPost(Canvas) to post new contents to surface.</div>
+ObjectAnimator	<div>String getPropertyName()</div><div>Object getTarget()</div><div>of&lt;propertyType&gt;()</div><div>setAutoCancel()//when another ObjectAnimator on the same property starts</div><div>set&lt;propertyTypes&gt;Values(Type...) values to animate between</div><div>start()</div>
+VideoView	canPause() canSeekBackward() canSeekForward()<div>getDuration isPlaying()</div><div>pause() resume()</div><div>seekTo(int msec)</div><div>setMediaController()</div><div>setOnPreparedListener()<br></div><div>setOnCompletionListener()</div><div>setVideoURI() setVideoPath()</div><div>start() stopPlayback() suspend()</div>
+MediaController	Widget<div>hide() isShowing() show() show(int timeout)</div><div>setMediaPlayer() setMediaPlayer(VideoView)</div><div><br></div>
+Fix Overdraw	Eliminate unnecessary backgrounds<div>Remove invisible views</div><div>In custom views, clip generously</div><div>Reduce transparency</div><div>- using a transparency to create a color</div><div>- preprocess images instead using transparency</div><div>Flaten and reorganize view hierarchy</div><div>Resize/ Rearrange views to reduce overlap</div>
+LayoutInspector	"Tools &gt; LayoutInspector<div><br></div><div>static ""snapshot: of view heirarchy as defined in XML</div><div>does not connect to running app</div><div>Layout Inspector can help find places to optimize view hierarchy.</div>"
+Android Emulator Limitations	Doesn't include virtual hardware for:<div>Bluetooth Device-attached headphones</div><div>NFC&nbsp; &nbsp;USB&nbsp; &nbsp;SD card insert/eject</div><div>Extended sensors such as biometrics</div><div>Missing specialized sensors that some devices have</div>
+AppWidget	New &gt; Widget &gt; AppWidget<div>appwidgetprovider - Javaclass thatextends</div><div>AppWidgetProvider which inherits BroadcastReceiver</div><div>REmoteViews</div><div>onClickPendingIntent()</div><div>onEnabled() | onDisbled() open resources on first widget clean up after last wdiget removed</div><div>&lt;appwidget-provider&gt;</div><div>android:initialLayout + midWidth+ minHeight</div>
+PackageInfo	
+ModuleInfo	
+RemoteViews	
+AppWidgetProvider	
+ApplicationInfo	
+Vibrator	Context.getSystemServices(VIBRATOR_SERVICE)<div>vibrate(VibrationEffect effect)</div>
+VibrationEffect	static VibrationEffect createOneShot(long milli, int amplitude)<div>static VibrationEffect createWaveform(long[] timings, int repeat)</div><div>static VibrationEffect creatveWaveform(long[] timings, int[] amplitudes, int repeat)</div>
+Espresso	
+ViewMatchers	
+ViewActions	
+ViewAssertions	
+PackageManager	Class for retrieving various kinds of Information related to the Application packages that are currently installed on the device.<br><br>Drawable getApplicationIcon(ApplicationInfo|String packageName)<div>List&lt;ApplicationInfo&gt; getInstalledApplication(int flags)</div><div>List&lt;PackageInfo&gt; getInstalledPackages(int flags)</div><div>CharSequences getApplicationLabel(ApplicationInfo)</div>
+Class for retrieving various kinds of Information related to the Application packages that are currently installed on the device.	PackageManager
+&lt;application&gt;	AndroidManifest.xml
+View	
+IBinder	
+Android Build Process(Update needed)	1) Compiler converts src into DEX(Dalvik EXE) files<div>2) APK Packager combines DEX files Android compiled resources into<br>3) APK Packager signs APK using debug or release keystore</div><div>4) APK Packager uses zipalign to optimize memory usage on device</div><div>5) Final APK generated</div>
+BluetoothAdapter	enable() disable() cancelDiscovery()<div>static checkBluetoothAddres(String addres)</div><div>String getAddres()</div><div>Set&lt;BluetoothDevice&gt; getBondedDevices()</div><div>static getDefaultAdapter()</div><div>String getName()</div><div>int getState() isDiscovering()&nbsp; isEnabled()</div><div>setName(String name)</div><div>startDiscovery()</div>
+AppWidgetManager	
+Fragments	subclass Fragment, public no args constructor required<div>&lt;fragment/&gt; //static</div><div>Or FragmentManager::getSupportFragmentManager()</div><div>FragmentTransaction, FragmentManager::beginTransaction</div>
+AlarmManager	
+FragmentTransaction	add(int containerId, Fragment, String tag)<div>add(int containerId, Fragment)</div><div>addSharedElement(View element name)</div><div>addToBackStack(String name)</div><div>commit() | commitNow()</div><div>add() | remove() | replace()<br></div>
+NotificationManagerCompat	
+NotificationManager	
+NotificationCompat.Builder	
+Notification	
+JobService	
+JobInfo.Builder	
+JobInfo	
+Parcelable	
+Context	
+onLowMemory()	
+Threadpools	Only for massive, parallel tasks.
+JobScheduler Needs update	Batch background work<div>JobInfo.Builder(int id, ComponentName cn)</div><div>ComponentName(getPackageName(), MyClass.class JobScheduler getSystemService(JobScheduler.class)</div><div>schedule(JobInfo)</div><div>enqueue(JobInfo)</div>
+<div>Protocol Buffers</div>	Nano proto buff<div>flat buff</div>
+Activity	
+AsyncTask Call Process	Helpful, but potentially bad<div>Executes serially after Honeycomb because parallel causd errors</div><div>Steps</div><div>1) onPreExecute() - UI</div><div>2) doInBackground()</div><div>3) onProgressUpdate - UI</div><div>4) onPostExecute() - UI</div><div>cancel() | isCancelled()</div><div>executeOnExecutor() for parallel</div><div>with AsyncTask.THREAD_POOL_EXECUTOR</div>
+SyncAdapter	
+ViewGroup	
+Class for getting current Android build info.	android.os.Build<div>ex. Build.VERSION</div><div>ex. Build.VERSION_CODES</div>
+IntentService	Considering using&nbsp; JobIntentService<div>onhandleIntent(Intent) //executes on worker thread</div><div>onBind()</div><div>onStart()</div><div><br></div><div>Stops self after intents are handled</div><div>No stopSelf() needed.<br><div><br></div></div>
+Content Provider	
+Broadcast Receiver	
+Service	Watch for Started vs Bound services<div>startService() | stopService() | bindService() unbind()</div><div>must match number of binds and unbinds for service to stop.</div>
+Service vs IntentService vs JobIntentService	
+Room Database	Architectural Components<div>Database layer on top of SQLite</div><div>database that takes care of mundane tasks that you&nbsp; used to handle with a helper class. Room database uses the DAO to issue queries to the SQLite database base on functions call. Uses annotations to generate SQL query.</div>
+Repository(Room)	Architecture Component<div>A class you create for mananging multiple data sources. In addition to a Room database, the Repository could manage remote data sources such as a server</div>
+ViewModel Needs Update	Architectural Components<br>Provides data to the UI and can act as a communication center between the Repository and the UI. Hides backend from UI. ViewModel instances survive device config changes.
+LiveData	Architectural Components<div>Data Holder class that follows the observer patter which meants that it can be observed.<br>LiveData is lifecycle-aware, so it automatically manages stopping and resuming observation base on the state.</div>
+DAO Needs update	Data Access Object<div><br></div><div>mapping of SQL queries to fuctions. Replaces old method of defining queries in helper class using DAO call functions and component handles the rest.</div>
+SQLite Database	Applicate database used by Android.<div>Room persistence library creats and maintains this data base for you.</div>
+Entity(Room)	"Annotated class that describes a database table<div>@Entity(tableName=""tableName"")</div><div>@PrimaryKey</div><div>@NotNull</div><div>@ColumnInfo(name=""word"")</div>"
+@NotNull	Annotation that declares an argument cannot be null.
+An annotation that declares an argument cannot be null.	@NotNull
+NavigationUI	Class whic hooks up elements of navigation<div>Associated with the Navigation Graph</div>
+Configuration	Contains the current configuration values<div>Received in onConfigurationChanged(Configuartioin newConfig)</div><div>Can be read to manually handle configuration changes&nbsp;</div><div>getResources().getConfiguration() to read the current configuration values.</div>
+UiModeManager	
+Lifecycle	Arch. Component
+Task	"Collection of activities that user interacts with while performing a job<div>Cohesive unit that can move to the ""background"" when user begins a new task or pressed Home.</div>"
+onNewIntent()	
+ActivityManager	Class gives info about, and interacts with activies, services, and the containing process.
+ActivityManager.AppTask	AppTask allows you to manage your own app's task.<div>ActivityManager.getAppTask()</div>
+Lifecycle.State	Used in ActivityScenario for testing<div>CREATED</div><div>DESTROYED</div><div>INITIALIZED</div><div>RESUMED</div><div>STARTED</div>
+FLAG_ACTIVITY_NEW_TASK	"Intent Flag<div>started activity will become the start of a new activity</div><div>Used to present ""launcher"" style behavior i.e. list of separate things that are otherwise run completel independently</div><div>If task is already runing current taskgroud to foreground</div><div>See *_MULTIPLE_TASK for flag to disable.</div>"
+FLAG_ACTIVITY_CELAR_TOP	Intent Flag<div>If set, and activity being launched is already running in current task then isntead of new instance, all activities on top of it will be closed and intent will be delivered to now on top&nbsp; existing activity's onNewIntent(FLAG_ACTIVITY_SINGLE_TOP) or it will be finished() and recreated with new intent.</div><div>_CLEAR_TOP | _NEW_TASK to pull existing task to foreground and clears to root state&nbsp;</div>
