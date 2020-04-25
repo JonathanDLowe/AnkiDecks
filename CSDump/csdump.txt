@@ -16,10 +16,10 @@ Callable
 RejectedExecutionHandler	
 SynchronousQueue	
 Algorithms	Input<div>Output</div><div>Definiteness</div><div>Finiteness</div><div>Correctness</div><div>Time Complexity</div><div>Space Complexity</div><div>- Instruction</div><div>- Data</div><div>- Environment</div>
-Data Structures	Graphs<div>Arrays</div><div>Lists</div><div>Maps</div><div>Sets</div><div>Stacks</div><div>Queues</div><div>Trees</div>
+Key Data Structures(8)	Graphs<div>Arrays</div><div>Lists</div><div>Maps</div><div>Sets</div><div>Stacks</div><div>Queues</div><div>Trees</div>
 HashMap vs LinkedHashMap vs TreeMap	HashMap - key order indeterminant<div>LinkedHashMap - key order 'predicatable i.e. insertion</div><div>TreeMap - keys sorted by 'natural' order or Comparator</div><div><br></div>
 HashSet vs LinkedHashSet vs TreeSet	HashSet - order indeterminant and not constant<div>LinkedHashSet - order based on insertion</div><div>TreeSet - ordered by 'natural ordering' or Comparator</div>
-DAG	Directed Acyclic Graph
+DAG	Directed Acyclic Graph&nbsp;<div>Finite&nbsp;directed graph&nbsp;with no&nbsp;directed cycles.<br></div>
 Algorithm Features	1) Correctness<div>2) Maintainability</div><div>3) Efficiency</div><div>4) Can we do better?</div>
 Breadth First Search(BFS)	Search algorithm that finds items nearest origin first<div>Performed on Trees or graphs</div><div>Utilizes a queue</div>
 Depth First Search(DFS)	Search algorithm that seeks the item as far down a path as it can before back tracking and trying another path<div>Performed on trees and graphs</div><div>Utilizes a stack</div>
@@ -62,3 +62,18 @@ Visitor Pattern
 Factory Pattern	Creates objects not known at runtime<div>returns new ojbects that have a common abstract class/interface</div><div>Often implemented with static methods</div>
 OOP Core Concepts	Abstraction<div>Encapsulation</div><div>Polymorphism</div><div>Inheritance</div><div>Composition</div>
 OOP Principles	Encapsulate what varies<div>Favor composition over inheritance</div><div>Program to interfaces, not implementations</div><div>Strive for loosely couple designs between objects that interace</div><div>Classes should be open to extension, and closed to modification.</div><div>Depend on abstaction, not concrete classes</div><div>Only talk to your friends - *what?&nbsp;</div><div>Don't call us, we'll call you - *huh?</div><div>A class should have one reason to change.</div>
+External Sort	Class of sorting algorithms that handlemassive amount that cannot fit within memory
+MapReduce	
+ArrayDeque	
+Deque	
+Map	
+Set	A DS that only contains unique elements.
+Queue	FIFO Data stucture that supports enqueue at the back, removing from the front.<br>Java Interface<br>boolean add(E&nbsp;e) Insert or Exception if full<br>E element() Retrieve but doesn't remove.<br>boolean offer(E&nbsp;e) Adds if has capacity, else returns false.<br>E peek() Retrieves, but not remove head<br>E poll() Retrieves and removes head, null if empty<br>E remove() - Retrieves and removes head<br>
+Stack	LIFO Data Structure that supports push() peek() and pop()<div>Key for DFS and backtracking algorithms</div>
+Tree	
+List	DS that contains a countable, ordered(not necessarily sorted) number of elements. Often constructed as a LinkedList
+Array	A DS of contiguous memory containing elements of one type accessed via an index. Small and efficient but have a fixed size.
+Graph	A DS consisting of Edges and Vertices(Nodes). Each Vertex has 0 to n Edges that are connected to other Vertices.<div>Edge connections may be directed or bidirectional, and weighted.</div>
+LinkedList	A list created by Nodes that hold a reference to the next Node in the list. Sometimes Nodes also have reference to prev. May contain cycles; be warned!
+Topological Sort	
+Dijkstra's algorithm	
