@@ -7,12 +7,12 @@ Java Memory Model
 ThreadPoolExecutor	"Designed for extension<div>""hooks"" for subclasses to override</div><div>beforeExecute()</div><div>afterExecute()</div><div>terminated()</div>"
 volatile	
 ThreadLocal	
-ConcurrentMap	
+ConcurrentMap	Map interface providing thread safety and atomicity<div><br></div><div>Memory consistency effect: actions in thread before adding Object to ConccurencyMap as key or or value happen before actions subsquent to access or removal of that object from the map.</div>
 QueueingFuture&lt;V&gt;	Subclass of FutureTask
 ExecutorService	Extends Executor<div>addslifecycle management</div><div>3 lifecycle states: running, shutting down, terminated</div>
-FutureTask	
+"<pre><span style=""font-weight: bold;"">FutureTask&lt;V&gt;</span></pre>"	"implements RunnableFuture&lt;V&gt;<div><span style=""color: rgb(53, 56, 51);"">A cancellable asynchronous computation.</span><br></div><div><span style=""color: rgb(53, 56, 51);""><br></span></div><div>Because&nbsp;FutureTask&nbsp;implements&nbsp;Runnable, a&nbsp;FutureTask&nbsp;can be submitted to an&nbsp;Executor&nbsp;for execution.<span style=""color: rgb(53, 56, 51);""><br></span></div>"
 Future	
-Callable	
+"<pre><span style=""font-weight: bold;"">Callable&lt;V&gt;</span></pre>"	"<span style=""color: rgb(53, 56, 51);"">A task that returns a result and may throw an exception</span><div>V call() - Computes a result, or throws an exception if unable to do so.<span style=""color: rgb(53, 56, 51);""><br></span></div>"
 RejectedExecutionHandler	
 SynchronousQueue	
 Algorithms	Input<div>Output</div><div>Definiteness</div><div>Finiteness</div><div>Correctness</div><div>Time Complexity</div><div>Space Complexity</div><div>- Instruction</div><div>- Data</div><div>- Environment</div>
@@ -66,7 +66,7 @@ External Sort	Class of sorting algorithms that handlemassive amount that cannot 
 MapReduce	
 ArrayDeque	
 Deque	
-Map	
+Map	"<span style=""color: rgb(71, 71, 71);"">Data Structure that relates one key to one value.</span><div><font color=""#474747"">Hashes keys into buckets for fast (functionally 0(1)) retrieval.<br></font><div><span style=""color: rgb(71, 71, 71);"">Keys should be immutable else experience undefined behavior</span></div></div><div><span style=""color: rgb(71, 71, 71);""><br></span></div>"
 Set	A DS that only contains unique elements.
 Queue	FIFO Data stucture that supports enqueue at the back, removing from the front.<br>Java Interface<br>boolean add(E&nbsp;e) Insert or Exception if full<br>E element() Retrieve but doesn't remove.<br>boolean offer(E&nbsp;e) Adds if has capacity, else returns false.<br>E peek() Retrieves, but not remove head<br>E poll() Retrieves and removes head, null if empty<br>E remove() - Retrieves and removes head<br>
 Stack	LIFO Data Structure that supports push() peek() and pop()<div>Key for DFS and backtracking algorithms</div>
@@ -77,3 +77,133 @@ Graph	A DS consisting of Edges and Vertices(Nodes). Each Vertex has 0 to n Edges
 LinkedList	A list created by Nodes that hold a reference to the next Node in the list. Sometimes Nodes also have reference to prev. May contain cycles; be warned!
 Topological Sort	
 Dijkstra's algorithm	
+Starting Ascii values of 0-9, a-z, A-Z	'0' - '9'&nbsp; 48 - 57<br>'A' - 'Z' 65 - 90<div>'a' - 'z'&nbsp; 97- 122</div>
+Strongly Connected Component<br>	Regions of graph that anywhere can get to anywhere else
+SCC	Strongly Connected Component
+Dijkstra's Shortest Path Algorithm	Computes length of paths to all other nodes<div>Workds on directed graphs with non-negative edge lengths</div><div><br></div><div>Solves single-source shortest path problem.</div>
+Heap	Data Structure<div>Interface/API</div><div>poll(), peak(), add()</div><div>Internal functions</div><div>heapifyUp() - if parent node is larger(minHeap)\smaller(maxHeap), swap</div><div>heapifyDown() starting at top, swap index with min(node, left, right) for minHeap or max(node, left, right) for maxHeap</div>
+Queue Interface	Use Deque<div><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Throws exception Returns special value&nbsp;</div><div>Insert&nbsp; &nbsp; &nbsp; add(e)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;offer(e)&nbsp;</div><div>Remove&nbsp; remove()&nbsp; &nbsp; &nbsp; &nbsp; poll()&nbsp;</div><div>Examine element()&nbsp; &nbsp; &nbsp; &nbsp; peek()<br></div>
+Functional Interface	- has 1 abstract method<div>- should be marked with @FunctionalInterface</div><div>- Annotation not required, but BP</div><div>- used with/implemented with lambdas</div><div>- e.g. (a) -&gt; a.test</div>
+Interfaces	"- classes implements inferfaces, interfaces extend interfaces<div>- no methods required i.e. marker interface</div><div>- cannot be final</div><div>- abstract modifier is automatic</div><div>- interace class is public/default</div><div>- inner interface ignores above rule</div><div>- first nonabstract class must implement all inherited methods</div><div>- interfaces are ""functional"" if has 1 method that is abstract</div>"
+Rabin-Karp String Matching Algorithm	When searching for s in b pre comute hashes of s.length in b then search any hashes that match hash(s) exhausively to confirm.<br><br>Can be modified to search anagrams
+S.O.L.I.D	Single responsibility<div>Open-closed Principle<br>Liskov Substitution<br>Interface segregation<br>Dependency Inversion</div>
+Single Responsiblity	
+Open-closed Principle	
+Liskov Substitution	
+Interface Segregation	
+Dependency Inversion	
+Instance State	
+Is-A vs. Has-A	
+Method Signature	
+Class vs Object	
+Method	
+Virtual method&nbsp;<div>vs&nbsp;</div><div>Pure virtual method</div>	
+Class<div>Vs</div><div>Static<br>Methods</div>	
+Static VS Class Initializer	
+Constructor	
+Destructor<div>Vs</div><div>Finalizer</div>	
+Super/Base Class	
+Sub/derived Class	
+Inheritance	
+Encapsulation	
+multiple inheritance	
+delegation / forwarding	
+Composition/Aggregation	
+Method Overloading vs Overriding	
+Producer-Consumer	
+Method Visibility	
+Idempotent	An operationg is idempotent if its effect is the same for multople executions as a single execution
+Poinson Pill	Recognizable object used to signal termination in a work queue5
+ACID	Properties of Database transaction<div>Atomicity</div><div>Consistency</div><div>Isolation<br>Durabilty</div>
+C.R.U.D	Operations performed on a database or a designation for a basic app providing this functionality<br>Create<div>Retrieve</div><div>Update</div><div>Delete</div>
+SQL Functions<div>MIN() MAX() IFNULL() ISNULL()</div><div>COUNT() AVG() SUM()</div><div>CONCAT() COALESCE()&nbsp;</div>	
+Concurrency Issues	
+OpenFlow Protocol	
+Colossus	SRE
+BigTable	SRE
+Global Software Load Balancer(GLSB)	
+Chubby	Lock Service<div>- locks across data centers</div><div>- paxos protocal for asyn consensus for data</div>
+Kruskal's Minimum Spanning Tree<div>Algorithm</div>	
+Load Balancing	
+Missing Interface	cat /proc/net/dev<div>lspci</div><div>sudo lshw -C network</div><div>wpasupplicant not installed by default</div><div>netplan has password in plan text</div><div>Not readable after</div><div>sudo chmod root:root path/to/file</div><div>sudo chmod 6t00 path/to/file</div>
+Position-Independent Code(PIC)	Code that executes properly regardless of its absolute address
+Machine using wrong default network interface	ip route<div>ip route delete &lt;ipaddress&gt;</div><div>ip route add &lt;ipaddress&gt;</div>
+Borg	Cluster Operating System<div>Borg Naming Service(BNS)</div>
+netplan	Replaced ifdown<div>/etc/netplan/config.yaml</div>
+HTTP Status Code Categories	RFC 7231<div>1) Information (100 - 199)</div><div>2) Success (200 - 299)</div><div>3) Redirects (300 - 399)</div><div>4) Client Errors (400 - 499)</div><div>5) Server Errors (500 - 599)</div>
+Stubby	Remote Procedure Call Infrastructure<div>-opensource version gRPC available</div>
+wget	
+curl	
+Dispatcher.IO	
+Dispatchers.Main	
+Dispatchers	
+withContext	
+CDATA	
+Coroutine	Job<div>Dispatcher</div><div>Scope</div>
+Separation of Concerns	
+ViewModelProvider	
+ViewModelProvider.Factory	
+Transformations	
+Backing Property	
+Observer	androidx
+LifecycleOwner	
+Computational Geometry	
+TLS	Transport Layer Security
+SSL	Secure Sockets Layer
+PostMan	
+TCP	Transport Control Protocol
+ICMP	Internet Control Message Protocol
+UDP	
+ARP	
+TCP Handshake	A SYN-&gt; B<div>A &lt;-SYN/ACK B<br></div><div>A ACK-&gt; B<br></div><div>TCp connection established.</div>
+TransactionTooLargeException	
+SQL Commands	SELECT<div>UPDATE</div><div>DELETE</div><div>INSERT INTO&nbsp;</div><div>CREATE DATABASE</div><div>ALTER DATABASE</div><div>CREATE TABLE</div><div>ALTER TABLE</div><div>DROP TABLE</div><div>CREATE INDEX</div><div>DROP INDEX</div>
+SQL Join	Inner Vs Left Vs Right vs Full Outer<div>Left = table1 right= table2</div><div>INNER - Records that match in both</div><div>LEFT(OUTER) - table2 + matching records from table 2</div><div>RIGHT(OUTER) - matched table2 records + table2</div><div>FULL OUTER - Returns all records when match exists in left or right</div>
+SQL LIKE	% 0-many wild card<div>_ single wild card</div><div>MS Access</div><div>* 0-many wildcard</div><div>? single wildcard</div>
+TTL	
+SQL Modifiers	UNIQUE<div>Primary KEY() - 1 per table, unique, not null</div><div>DEFAULT</div><div>NOT NULL</div><div>AUTO_INCREMENT</div><div>Foreign Key()</div>
+SQL Data Types	VARCHAR(size)<div>TEXT(size)</div><div>BLOB(size)</div><div>BIT(size)</div><div>BOOL | BOOLEAN</div><div>INT(size)</div><div>DECIMAL(size, digitsAfterDecimal)</div><div>DATE</div><div>TIMESTAMP</div>
+DISTINCT	return only distinct(different) values
+HTTP	Hyper Text Transfer Protocol<div>Communication between client/server</div><div>HTTP Request -&gt; Response</div><div>Independant</div><div>TCP/IP based, Application layer</div><div>Stateless</div>
+Subnet Mask	
+Inode	Data structure on a filesystem on Linux that stores all file info except name &amp; data
+Data packet	IP Packet
+SQL Prepared Statements	
+SQL Conditional Operators	= Equal<div>&gt;</div><div>&lt;</div><div>&gt;=</div><div>&lt;=</div><div>&lt;&gt; NOT Equal, some use !=</div><div>BETWEEN</div><div>LIKE</div><div>IN</div>
+BGP	
+MAC Address	
+Instantiation	
+Ethernet	
+HTTPS	
+DNS	
+HTTP Methods	GET<div>HEAD<br><div>POST</div><div>PUT</div><div>DELETE</div><div>CONNECT</div><div>OPTIONS</div><div>TRACE</div><div>PATCH</div></div>
+HTTP Header Fields	
+HTTP Header Type	<div>General-header:&nbsp;These header fields have general applicability for both request and response messages.</div><div>Client Request-header:&nbsp;These header fields have applicability only for request messages.</div><div>Server Response-header:&nbsp;These header fields have applicability only for response messages.</div><div>Entity-header:&nbsp;These header fields define meta information about the entity-body or, if no body is present, about the resource identified by the request.</div>
+HTTP 1.1. vs 2.0	
+Diffie-Hellman	
+Shell	
+Invariant	
+Redirection operators	&gt; redirects stdout w/ transaction<div>&gt;&gt; redirects stdout w/ append</div><div>2&gt; redirects stderr via file dscriptor 2</div><div>Note: 0=stdin 1=stdout 2=stderr</div><div>&lt; redirect to stdin</div>
+7 Layers of OSI	7. Application<div>6. Presentation</div><div>5. Session</div><div>4. Transport</div><div>3. Network</div><div>2. Data Link</div><div>1. Physical</div>
+SSH	
+client-server protocol	
+File System	
+Linux Permissions	
+memory management	
+System calls	
+libraries	
+Scheduling	
+Kernel	
+Livelock	
+Context Switching	
+Deadlock	
+monitor	
+Semaphor	
+Mutex	
+Locks	
+QUIC	"""quick"" general-purpose transport layer<div>designed by Jim Roskind at Google</div><div>In draft but used by Chrome to connect To Google Servers aka gQUIC</div><div>Call HTTP over QUIC HTTP/S</div><div>In advance of becoming a standard.</div><div><br></div>"
+user-agent	any tool that acts on behalf of the user<div>e.g. web browser, web connected app</div>
+Proxy	May perform numerous functions<div>- caching ( cache can be public or private )</div><div>- filtering ( like antivirus scan or parental controls)</div><div>- load balancing ( multiple server s handle requrest )</div><div>- authentication ( control access to resources )&nbsp;</div><div>- logging ( save historical information )</div>
+Sharding	
+Cookie	
+dig	Domain Informating Groper<div>DNS Lookup Utility</div>
