@@ -67,7 +67,7 @@ Service vs IntentService vs JobIntentService
 Room Database	Architectural Components<div>Database layer on top of SQLite</div><div>database that takes care of mundane tasks that you&nbsp; used to handle with a helper class. Room database uses the DAO to issue queries to the SQLite database base on functions call. Uses annotations to generate SQL query.</div>
 Repository(Room)	Architecture Component<div>A class you create for mananging multiple data sources. In addition to a Room database, the Repository could manage remote data sources such as a server</div>
 ViewModel Needs Update	Architectural Components<br>Provides data to the UI and can act as a communication center between the Repository and the UI. Hides backend from UI. ViewModel instances survive device config changes.
-LiveData	Architectural Components<div>Data Holder class that follows the observer patter which meants that it can be observed.<br>LiveData is lifecycle-aware, so it automatically manages stopping and resuming observation base on the state.</div>
+LiveData&lt;T&gt;	Architectural Components<div>Data Holder class that follows the observer patter which meants that it can be observed.<br>LiveData is lifecycle-aware, so it automatically manages stopping and resuming observation base on the state.</div>
 DAO Needs update	Data Access Object<div><br></div><div>mapping of SQL queries to fuctions. Replaces old method of defining queries in helper class using DAO call functions and component handles the rest.</div>
 SQLite Database	Applicate database used by Android.<div>Room persistence library creats and maintains this data base for you.</div>
 Entity(Room)	"Annotated class that describes a database table<div>@Entity(tableName=""tableName"")</div><div>@PrimaryKey</div><div>@NotNull</div><div>@ColumnInfo(name=""word"")</div>"
@@ -100,3 +100,40 @@ Message	Defines a message containing a description and arbitrary data<div>get\se
 ANR	Application Not Responding<div>UI thread blocked</div><div>Blocking main thread prevents ui updates. responding to touch/ user evends, and drawing</div><div>Shown when:</div><div>1 UI thread doesn't respond in 5 SECONDS</div><div>2 BroadcastReceiver hasn't finished in considerable time while an activity of your app is not in foreground</div><div>ANRs excessive if:</div><div>1+ ANRs in 0.47% of daily sessions</div><div>2+ ANRs in 0.24% of daily sessions</div>
 Looper	Class to create message loop for Thead<div>prepare() - innit current thread as looper</div><div>create handlers that reference the Looper then loop() to run loop.</div><div>quit() terminate immediately</div><div>quitSafely() therminate whenn all messages are handled</div><div>delated messages won't happen. New messages are refused</div><div>&nbsp;Send message will return false</div><div>quit and quitSafely() on HandlerThread forwarded to the Looper</div>
 "<span style=""color: rgb(55, 71, 79); background-color: rgb(241, 243, 244);"">AdvertisingIdClient (Update)</span>"	AdvertisingIdInfo
+Intent	"<span style=""color: rgb(32, 33, 36);"">a passive data structure holding an abstract description of an action to be performed with data.<br>Ex. launching and passing data to other activites in app, requesting external actions like send email or get picture</span><div><font color=""#202124""><br></font><div><font color=""#202124"">Intent(String action), Intent(String action, Uri uri), Intent(Context packageContext, Class&lt;?&gt; cls) - launching activity directly<br></font><div><span style=""color: rgb(32, 33, 36);"">putExtra(String key, &lt;Type&gt; value)</span></div><div><span style=""color: rgb(32, 33, 36);"">get&lt;Type&gt;Extra(key, default value)</span></div></div></div>"
+Intent Structure	- action<div>- data</div><div>Optional</div><div>- category</div><div>- type</div><div>- component</div><div>- extras</div>
+androidx.annotations	
+Ninja Build System Component	Used to build parts of Androi
+SOONG Build System	
+&lt;layout&gt;	
+&lt;merge&gt;	
+OnLifecycleEvent	annotation
+MVVM	Model-View-ViewModel Pattern
+MutableLiveData&lt;T&gt;	
+ViewModelFactory	
+ViewModel	
+Sealed Class	
+InstrumentationRegistry	androidx.test.platform.app
+ApplicationProvider	
+DiffUtil	class in RecyclerView<div>Eugene W. Meyer's Difference Algorithm</div>
+@BindingAdapter	
+@Spy	
+BluetoothManager	Context.getSystemService(BluetoothManager.class)<div>BluetoothAdapter getAdapter()</div><div>Context.getSystemService(Context.BLUETOOTH_SERVICE)</div><div>List&lt;BluetoohtDevice&gt; getConnectedDevices(int profile)</div><div>int getConnectionState(BluetoothDevice device, int profile)</div>
+SurfaceHolder	
+ActivityInfo	
+SensorEvent	
+SensorListener	
+SensorManager	
+Sensor	
+Geocoder	
+InputMethodManager	<div>input method framework (IMF) architecture</div>input method manager<div>input method</div><div>client application</div><div>Input Method Service</div>
+ValueAnimator	
+Bitmap.Config	
+Bitmap	
+Rect	
+Place	
+androidx.annotation	
+PlaceDetectionClient	
+Format	
+NumberFormat	
+<div>DateFormat</div>	
