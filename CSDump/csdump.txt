@@ -1,20 +1,11 @@
-"<b>Bold </b><span style=""font-style: italic;"">Italics</span><b style=""font-style: italic;""> </b><u>Underline</u>&nbsp;<sup>Super</sup>&nbsp;<sub>Sub</sub><div><sub>newline</sub></div>"	
-(Concurrency)CountDownLatch	
-(Concurrency)notify()	
 (Concurrency)Executor&nbsp;	Primary Abstraction for task execution. Not Thread. Decouples task submission from task execution
 (Concurrency)wait()&nbsp;	Deprecated Lock is per thread<div>Object waitObject;</div><div>synchronized(waitObject) { // thread 1</div><div>&nbsp; &nbsp; if (condition) {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; waitObject.wait();</div><div>&nbsp; &nbsp; }</div><div>}</div><div><div>synchronized(waitObject) { // thread 2</div><div>&nbsp; &nbsp; waitObject.notify(); //notifyAll() for 1 or all threads</div><div>}</div></div>
-Java Memory Model	
 ThreadPoolExecutor	"Designed for extension<div>""hooks"" for subclasses to override</div><div>beforeExecute()</div><div>afterExecute()</div><div>terminated()</div>"
-volatile	
-ThreadLocal	
 ConcurrentMap	Map interface providing thread safety and atomicity<div><br></div><div>Memory consistency effect: actions in thread before adding Object to ConccurencyMap as key or or value happen before actions subsquent to access or removal of that object from the map.</div>
 QueueingFuture&lt;V&gt;	Subclass of FutureTask
 ExecutorService	Extends Executor<div>addslifecycle management</div><div>3 lifecycle states: running, shutting down, terminated</div>
 "<pre><span style=""font-weight: bold;"">FutureTask&lt;V&gt;</span></pre>"	"implements RunnableFuture&lt;V&gt;<div><span style=""color: rgb(53, 56, 51);"">A cancellable asynchronous computation.</span><br></div><div><span style=""color: rgb(53, 56, 51);""><br></span></div><div>Because&nbsp;FutureTask&nbsp;implements&nbsp;Runnable, a&nbsp;FutureTask&nbsp;can be submitted to an&nbsp;Executor&nbsp;for execution.<span style=""color: rgb(53, 56, 51);""><br></span></div>"
-Future	
 "<pre><span style=""font-weight: bold;"">Callable&lt;V&gt;</span></pre>"	"<span style=""color: rgb(53, 56, 51);"">A task that returns a result and may throw an exception</span><div>V call() - Computes a result, or throws an exception if unable to do so.<span style=""color: rgb(53, 56, 51);""><br></span></div>"
-RejectedExecutionHandler	
-SynchronousQueue	
 Algorithms	Input<div>Output</div><div>Definiteness</div><div>Finiteness</div><div>Correctness</div><div>Time Complexity</div><div>Space Complexity</div><div>- Instruction</div><div>- Data</div><div>- Environment</div>
 Key Data Structures(8)	Graphs<div>Arrays</div><div>Lists</div><div>Maps</div><div>Sets</div><div>Stacks</div><div>Queues</div><div>Trees</div>
 HashMap vs LinkedHashMap vs TreeMap	HashMap - key order indeterminant<div>LinkedHashMap - key order 'predicatable i.e. insertion</div><div>TreeMap - keys sorted by 'natural' order or Comparator</div><div><br></div>
@@ -37,46 +28,19 @@ Preorder Traversal	Process 'this' node before both its left and right child node
 Inorder Traversal	Process 'this' nodes left nodte, itself, then right child node.
 Level Order	Process nodes at each 'level' before proceeding to the next node.&nbsp;
 Big O Notation	Big O only cares about the worst case<div>-&nbsp; &nbsp; for each space and time complexity</div><div>Drop constants</div><div>Drop non-dominant terms</div><div>Add vs Multiply</div><div>Amortized time: worst case happens rarely</div><div>Recursive runtime oftent O(branches<sup>depth</sup>)</div><div>- mention expected case, but Big&nbsp; O worst case</div><div>lines are adding</div><div>nested loops are multiplying</div>
-Defensive Copy	
-Proxy Pattern	
-Strategy Pattern	Defines a family of algorithms, encapsulates each one, and makes them interchangable.<div>Strategy lets the algorithm vary independently from clients that use it.</div>
-Template Method Pattern	Definte the skeleton of an algorithm in an operation, deferring some step to subclasses.<div>Template method lets subclasses redefine certain steps of an algorithm without changing the algorithms structure.</div><div><br></div>
-Iterator Pattern	Provides a way to access the elements of an aaggregate object sequentially without exposing the internal structure/underlying representation of the DS.
-Composite Pattern	Compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and composition of object uniformly.
-State Pattern	Allow an object to alter its behavior when its internal state changes.<div>The object will appear to change its class.</div>
-Observer Pattern	Defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
-Decorator Pattern	Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
-Abstract Factory Pattern	Provides an interface for creating familites of related or dependent objects without specifying their concrete classes.
-Factory Method Pattern	Defines an interface for creating an object, but let subclasses decide which class to instantiate a class defer instantiation to the subclasses.
-Singleton Pattern	Ensure a class only has one instance and provide a global point of acces to it.<div>Synchroned methods</div><div>private constuctor</div><div>Accessed by instance()</div><div>Instance() returns reference to private, static, final far of type of singleton class</div><div>May employ double-checked locking</div><div>volatile in Java</div>
-Command Pattern	Encapsulates a request as an object, therby letting you parameterize clients with different request, queue, or log requests, and support undoable ops.
-Adaptor Pattern	Converts the interface of a class into another interface clients expects.<div>Lets classes work together that couldn't otherwise because of incompatible interfaces.</div>
-Facade Pattern	Provides a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use. Also used to simplify complex interface
-Builder Pattern	Solutions to massive constuctor(telescoping)<div>Parameters passed to builder object often with method chaining</div><div>Mutable class that can spit out a complete immutable object</div><div>Tightly couple to resulting class</div><div>In practice, bundled as an inner class</div>
-Model-View-Controller Pattern(MVC)	
-Model-View-ViewModel Pattern	
 RMI	Remote Method Invocation
-Mediator Pattern	
-Flyweight Pattern	
-Visitor Pattern	
-Factory Pattern	Creates objects not known at runtime<div>returns new ojbects that have a common abstract class/interface</div><div>Often implemented with static methods</div>
 OOP Core Concepts	Abstraction<div>Encapsulation</div><div>Polymorphism</div><div>Inheritance</div><div>Composition</div>
 OOP Principles	Encapsulate what varies<div>Favor composition over inheritance</div><div>Program to interfaces, not implementations</div><div>Strive for loosely couple designs between objects that interace</div><div>Classes should be open to extension, and closed to modification.</div><div>Depend on abstaction, not concrete classes</div><div>Only talk to your friends - *what?&nbsp;</div><div>Don't call us, we'll call you - *huh?</div><div>A class should have one reason to change.</div>
 External Sort	Class of sorting algorithms that handlemassive amount that cannot fit within memory
 MapReduce	
-ArrayDeque	
-Deque	
 Map	"<span style=""color: rgb(71, 71, 71);"">Data Structure that relates one key to one value.</span><div><font color=""#474747"">Hashes keys into buckets for fast (functionally 0(1)) retrieval.<br></font><div><span style=""color: rgb(71, 71, 71);"">Keys should be immutable else experience undefined behavior</span></div></div><div><span style=""color: rgb(71, 71, 71);""><br></span></div>"
 Set	A DS that only contains unique elements.
 Queue	FIFO Data stucture that supports enqueue at the back, removing from the front.<br>Java Interface<br>boolean add(E&nbsp;e) Insert or Exception if full<br>E element() Retrieve but doesn't remove.<br>boolean offer(E&nbsp;e) Adds if has capacity, else returns false.<br>E peek() Retrieves, but not remove head<br>E poll() Retrieves and removes head, null if empty<br>E remove() - Retrieves and removes head<br>
 Stack	LIFO Data Structure that supports push() peek() and pop()<div>Key for DFS and backtracking algorithms</div>
-Tree	
 List	DS that contains a countable, ordered(not necessarily sorted) number of elements. Often constructed as a LinkedList
 Array	A DS of contiguous memory containing elements of one type accessed via an index. Small and efficient but have a fixed size.
 Graph	A DS consisting of Edges and Vertices(Nodes). Each Vertex has 0 to n Edges that are connected to other Vertices.<div>Edge connections may be directed or bidirectional, and weighted.</div>
 LinkedList	A list created by Nodes that hold a reference to the next Node in the list. Sometimes Nodes also have reference to prev. May contain cycles; be warned!
-Topological Sort	
-Dijkstra's algorithm	
 Starting Ascii values of 0-9, a-z, A-Z	'0' - '9'&nbsp; 48 - 57<br>'A' - 'Z' 65 - 90<div>'a' - 'z'&nbsp; 97- 122</div>
 Strongly Connected Component<br>	Regions of graph that anywhere can get to anywhere else
 SCC	Strongly Connected Component
@@ -87,44 +51,13 @@ Functional Interface	- has 1 abstract method<div>- should be marked with @Functi
 Interfaces	"- classes implements inferfaces, interfaces extend interfaces<div>- no methods required i.e. marker interface</div><div>- cannot be final</div><div>- abstract modifier is automatic</div><div>- interace class is public/default</div><div>- inner interface ignores above rule</div><div>- first nonabstract class must implement all inherited methods</div><div>- interfaces are ""functional"" if has 1 method that is abstract</div>"
 Rabin-Karp String Matching Algorithm	When searching for s in b pre comute hashes of s.length in b then search any hashes that match hash(s) exhausively to confirm.<br><br>Can be modified to search anagrams
 S.O.L.I.D	Single responsibility<div>Open-closed Principle<br>Liskov Substitution<br>Interface segregation<br>Dependency Inversion</div>
-Single Responsiblity	
-Open-closed Principle	
-Liskov Substitution	
-Interface Segregation	
-Dependency Inversion	
-Instance State	
-Is-A vs. Has-A	
-Method Signature	
-Class vs Object	
-Method	
-Virtual method&nbsp;<div>vs&nbsp;</div><div>Pure virtual method</div>	
-Class<div>Vs</div><div>Static<br>Methods</div>	
-Static VS Class Initializer	
-Constructor	
-Destructor<div>Vs</div><div>Finalizer</div>	
-Super/Base Class	
-Sub/derived Class	
-Inheritance	
-Encapsulation	
-multiple inheritance	
-delegation / forwarding	
-Composition/Aggregation	
-Method Overloading vs Overriding	
-Producer-Consumer	
-Method Visibility	
 Idempotent	An operationg is idempotent if its effect is the same for multople executions as a single execution
 Poinson Pill	Recognizable object used to signal termination in a work queue5
 ACID	Properties of Database transaction<div>Atomicity</div><div>Consistency</div><div>Isolation<br>Durabilty</div>
 C.R.U.D	Operations performed on a database or a designation for a basic app providing this functionality<br>Create<div>Retrieve</div><div>Update</div><div>Delete</div>
-SQL Functions<div>MIN() MAX() IFNULL() ISNULL()</div><div>COUNT() AVG() SUM()</div><div>CONCAT() COALESCE()&nbsp;</div>	
-Concurrency Issues	
-OpenFlow Protocol	
 Colossus	SRE
 BigTable	SRE
-Global Software Load Balancer(GLSB)	
 Chubby	Lock Service<div>- locks across data centers</div><div>- paxos protocal for asyn consensus for data</div>
-Kruskal's Minimum Spanning Tree<div>Algorithm</div>	
-Load Balancing	
 Missing Interface	cat /proc/net/dev<div>lspci</div><div>sudo lshw -C network</div><div>wpasupplicant not installed by default</div><div>netplan has password in plan text</div><div>Not readable after</div><div>sudo chmod root:root path/to/file</div><div>sudo chmod 6t00 path/to/file</div>
 Position-Independent Code(PIC)	Code that executes properly regardless of its absolute address
 Machine using wrong default network interface	ip route<div>ip route delete &lt;ipaddress&gt;</div><div>ip route add &lt;ipaddress&gt;</div>
@@ -132,78 +65,53 @@ Borg	Cluster Operating System<div>Borg Naming Service(BNS)</div>
 netplan	Replaced ifdown<div>/etc/netplan/config.yaml</div>
 HTTP Status Code Categories	RFC 7231<div>1) Information (100 - 199)</div><div>2) Success (200 - 299)</div><div>3) Redirects (300 - 399)</div><div>4) Client Errors (400 - 499)</div><div>5) Server Errors (500 - 599)</div>
 Stubby	Remote Procedure Call Infrastructure<div>-opensource version gRPC available</div>
-wget	
-curl	
-Dispatcher.IO	
-Dispatchers.Main	
-Dispatchers	
-withContext	
-CDATA	
 Coroutine	Job<div>Dispatcher</div><div>Scope</div>
-Separation of Concerns	
-ViewModelProvider	
-ViewModelProvider.Factory	
-Transformations	
-Backing Property	
 Observer	androidx
-LifecycleOwner	
-Computational Geometry	
 TLS	Transport Layer Security
 SSL	Secure Sockets Layer
-PostMan	
 TCP	Transport Control Protocol
 ICMP	Internet Control Message Protocol
-UDP	
-ARP	
 TCP Handshake	A SYN-&gt; B<div>A &lt;-SYN/ACK B<br></div><div>A ACK-&gt; B<br></div><div>TCp connection established.</div>
-TransactionTooLargeException	
 SQL Commands	SELECT<div>UPDATE</div><div>DELETE</div><div>INSERT INTO&nbsp;</div><div>CREATE DATABASE</div><div>ALTER DATABASE</div><div>CREATE TABLE</div><div>ALTER TABLE</div><div>DROP TABLE</div><div>CREATE INDEX</div><div>DROP INDEX</div>
 SQL Join	Inner Vs Left Vs Right vs Full Outer<div>Left = table1 right= table2</div><div>INNER - Records that match in both</div><div>LEFT(OUTER) - table2 + matching records from table 2</div><div>RIGHT(OUTER) - matched table2 records + table2</div><div>FULL OUTER - Returns all records when match exists in left or right</div>
 SQL LIKE	% 0-many wild card<div>_ single wild card</div><div>MS Access</div><div>* 0-many wildcard</div><div>? single wildcard</div>
-TTL	
 SQL Modifiers	UNIQUE<div>Primary KEY() - 1 per table, unique, not null</div><div>DEFAULT</div><div>NOT NULL</div><div>AUTO_INCREMENT</div><div>Foreign Key()</div>
 SQL Data Types	VARCHAR(size)<div>TEXT(size)</div><div>BLOB(size)</div><div>BIT(size)</div><div>BOOL | BOOLEAN</div><div>INT(size)</div><div>DECIMAL(size, digitsAfterDecimal)</div><div>DATE</div><div>TIMESTAMP</div>
 DISTINCT	return only distinct(different) values
 HTTP	Hyper Text Transfer Protocol<div>Communication between client/server</div><div>HTTP Request -&gt; Response</div><div>Independant</div><div>TCP/IP based, Application layer</div><div>Stateless</div>
-Subnet Mask	
 Inode	Data structure on a filesystem on Linux that stores all file info except name &amp; data
 Data packet	IP Packet
-SQL Prepared Statements	
 SQL Conditional Operators	= Equal<div>&gt;</div><div>&lt;</div><div>&gt;=</div><div>&lt;=</div><div>&lt;&gt; NOT Equal, some use !=</div><div>BETWEEN</div><div>LIKE</div><div>IN</div>
-BGP	
-MAC Address	
-Instantiation	
-Ethernet	
-HTTPS	
-DNS	
 HTTP Methods	GET<div>HEAD<br><div>POST</div><div>PUT</div><div>DELETE</div><div>CONNECT</div><div>OPTIONS</div><div>TRACE</div><div>PATCH</div></div>
-HTTP Header Fields	
 HTTP Header Type	<div>General-header:&nbsp;These header fields have general applicability for both request and response messages.</div><div>Client Request-header:&nbsp;These header fields have applicability only for request messages.</div><div>Server Response-header:&nbsp;These header fields have applicability only for response messages.</div><div>Entity-header:&nbsp;These header fields define meta information about the entity-body or, if no body is present, about the resource identified by the request.</div>
-HTTP 1.1. vs 2.0	
-Diffie-Hellman	
-Shell	
-Invariant	
+Shell	The&nbsp;shell&nbsp;is the command interpretor in an operating system such as&nbsp;Unix&nbsp;or&nbsp;GNU/Linux, it is a program that executes other programs.
+Invariant	In&nbsp;computer science, one can encounter invariants that can be relied upon to be true during the execution of a program, or during some portion of it. It is a&nbsp;logical assertion&nbsp;that is always held to be true during a certain phase of execution.
 Redirection operators	&gt; redirects stdout w/ transaction<div>&gt;&gt; redirects stdout w/ append</div><div>2&gt; redirects stderr via file dscriptor 2</div><div>Note: 0=stdin 1=stdout 2=stderr</div><div>&lt; redirect to stdin</div>
 7 Layers of OSI	7. Application<div>6. Presentation</div><div>5. Session</div><div>4. Transport</div><div>3. Network</div><div>2. Data Link</div><div>1. Physical</div>
-SSH	
-client-server protocol	
+SSH	"<span style=""color: rgb(55, 55, 55);"">SSH (Secure Shell) protocol<br>SSH Client and SSH Server</span><div><span style=""color: rgb(55, 55, 55);"">Uses&nbsp;</span><span style=""color: rgb(55, 55, 55);"">768 bit Diffie-Hellman</span></div><div><span style=""color: rgb(55, 55, 55);"">Management of SSH keys is vital lest it cause a major risk in larger organizations.</span></div><div><div>ssh-keygen&nbsp;- Create keys</div><div>ssh-copy-id&nbsp;- Provision access on servers</div></div><div>SSH File Transfer Protocol (SFTP)<br></div>"
+client-server protocol	"<span style=""color: rgb(34, 34, 34);"">A communications&nbsp;</span><b>protocol</b><span style=""color: rgb(34, 34, 34);"">&nbsp;that provides a structure for requests between&nbsp;</span><b>client</b><span style=""color: rgb(34, 34, 34);"">&nbsp;and&nbsp;</span><b>server</b><span style=""color: rgb(34, 34, 34);"">&nbsp;in a network.<br>Operate in the Application Layer</span><div><span style=""color: rgb(34, 34, 34);""><br>In contrast, some distribuated applications use Peer-to-Peer(P2P)<br><br>Ex. HTTP</span></div>"
 File System	
-Linux Permissions	
+Linux Permissions	<div>chmod&nbsp;[OPTION]...&nbsp;OCTAL-MODE FILE...</div><div>chown&nbsp;[OPTION]... [OWNER][:[GROUP]]&nbsp;FILE...<br><br>Permission Groups</div><div>-&nbsp; Owner permissions apply only the owner of the file or directory, they will not impact the actions of other users.group&nbsp;</div><div>Group permissions apply only to the group that has been assigned to the file or directory, they will not effect the actions of other users.all users&nbsp;</div><div>- All Users permissions apply to all other users on the system, this is the permission group that you want to watch the most.<br><br>Permission Types<div>- Read permission refers to a user’s capability to read the contents of the file.write</div><div>- Write permissions refer to a user’s capability to write or modify a file or directory.execute&nbsp;</div><div>- Execute permission affects a user’s capability to execute a file or view the contents of a directory.<br></div></div>
 memory management	
-System calls	
+System calls	In&nbsp;computing, a&nbsp;system call&nbsp;is the programmatic way in which a&nbsp;computer program&nbsp;requests a service from the&nbsp;kernel&nbsp;of the&nbsp;operating system&nbsp;on which it is executed.
 libraries	
-Scheduling	
-Kernel	
-Livelock	
-Context Switching	
-Deadlock	
-monitor	
-Semaphor	
-Mutex	
-Locks	
+Scheduler	In&nbsp;computing,&nbsp;scheduling&nbsp;is the method by which work is assigned to resources that complete the work. The work may be virtual computation elements such as&nbsp;threads,&nbsp;processes&nbsp;or data&nbsp;flows, which are in turn scheduled onto hardware resources such as&nbsp;processors,&nbsp;network links&nbsp;or&nbsp;expansion cards.<br><br>Types of operating system schedulers<div>Process scheduler<br></div><div>preemptive&nbsp;scheduler Vs.&nbsp;cooperative&nbsp;scheduler<br></div>
+Kernel	The&nbsp;kernel&nbsp;is a&nbsp;computer program&nbsp;at the core of a computer's&nbsp;operating system&nbsp;with complete control over everything in the system.&nbsp;It is an integral part of any operating system.
+Livelock	"Similiar to deadlock, but the processes continue to appear to function while making no meaningful progress.<br><div><br></div><div>Livelock is a risk with some&nbsp;algorithms&nbsp;that detect and recover from&nbsp;deadlock.<br></div><div><br></div><div><span style=""color: rgb(34, 34, 34);"">This can be avoided by ensuring that only one process (chosen arbitrarily or by priority) takes action.</span><br></div>"
+Context Switching	A&nbsp;context switch&nbsp;is the process of storing the state of a&nbsp;process&nbsp;or&nbsp;thread, so that it can be restored and resume&nbsp;execution&nbsp;at a later point. This allows multiple processes to share a single&nbsp;CPU, and is an essential feature of a&nbsp;multitasking operating system.
+Deadlock	In&nbsp;concurrent computing, a&nbsp;deadlock&nbsp;is a state in which each member of a group is waiting for another member, including itself, to take action, such as sending a message or more commonly releasing a&nbsp;lock
+Semaphor	"A type of lock.<div><br>A counting semaphore. Conceptually, a semaphore maintains a set of permits. Each&nbsp;acquire()&nbsp;blocks if necessary until a permit is available, and then takes it. Each&nbsp;release()&nbsp;adds a permit, potentially releasing a blocking acquirer. However, no actual permit objects are used; the&nbsp;Semaphore&nbsp;just keeps a count of the number available and acts accordingly.</div><div><br><span style=""color: rgb(53, 56, 51);"">Semaphores are often used to restrict the number of threads than can access some (physical or logical) resource.&nbsp;</span><br></div>"
+Mutex	Another name for a lock<br><br>In&nbsp;computer science, a&nbsp;lock&nbsp;or&nbsp;mutex&nbsp;(from&nbsp;mutual exclusion) is a&nbsp;synchronization&nbsp;mechanism for enforcing limits on access to a resource in an environment where there are many&nbsp;threads of execution. A lock is designed to enforce a&nbsp;mutual exclusion&nbsp;concurrency control&nbsp;policy.
+Locks	Another name for a Mutex<br><br>In&nbsp;computer science, a&nbsp;lock&nbsp;or&nbsp;mutex&nbsp;(from&nbsp;mutual exclusion) is a&nbsp;synchronization&nbsp;mechanism for enforcing limits on access to a resource in an environment where there are many&nbsp;threads of execution. A lock is designed to enforce a&nbsp;mutual exclusion&nbsp;concurrency control&nbsp;policy.
 QUIC	"""quick"" general-purpose transport layer<div>designed by Jim Roskind at Google</div><div>In draft but used by Chrome to connect To Google Servers aka gQUIC</div><div>Call HTTP over QUIC HTTP/S</div><div>In advance of becoming a standard.</div><div><br></div>"
 user-agent	any tool that acts on behalf of the user<div>e.g. web browser, web connected app</div>
 Proxy	May perform numerous functions<div>- caching ( cache can be public or private )</div><div>- filtering ( like antivirus scan or parental controls)</div><div>- load balancing ( multiple server s handle requrest )</div><div>- authentication ( control access to resources )&nbsp;</div><div>- logging ( save historical information )</div>
-Sharding	
-Cookie	
-dig	Domain Informating Groper<div>DNS Lookup Utility</div>
+Sharding	"<div>A&nbsp;database shard&nbsp;is a&nbsp;horizontal partition&nbsp;of data in a&nbsp;database&nbsp;or&nbsp;search engine. Each individual partition is referred to as a&nbsp;shard&nbsp;or&nbsp;database shard. Each shard is held on a separate&nbsp;database server&nbsp;instance, to spread load.</div><div>Some data within a database remains present in all shards,<span style=""font-size: 16.6667px;""> </span>but some appears only in a single shard. Each shard (or server) acts as the&nbsp;single&nbsp;source for this subset of data.</div>"
+Cookie	"<span style=""color: rgb(34, 34, 34);"">A small piece of data sent from a&nbsp;</span><a href=""https://en.wikipedia.org/wiki/Website"">website</a><span style=""color: rgb(34, 34, 34);"">&nbsp;and stored on the user's computer by the user's&nbsp;</span><a href=""https://en.wikipedia.org/wiki/Web_browser"">web browser</a><span style=""color: rgb(34, 34, 34);"">&nbsp;while the user is browsing. Cookies were designed to be a reliable mechanism for websites to remember&nbsp;</span><a href=""https://en.wikipedia.org/wiki/Program_state"">stateful</a><span style=""color: rgb(34, 34, 34);"">&nbsp;information (such as items added in the shopping cart in an online store) or to record the user's browsing activity (including clicking particular buttons,&nbsp;</span><a href=""https://en.wikipedia.org/wiki/Access_control"">logging in</a><span style=""color: rgb(34, 34, 34);"">, or recording which pages were visited in the past</span>"
+Internet protocol(IP) suite	The&nbsp;conceptual model&nbsp;and set of&nbsp;communications protocols&nbsp;used in the&nbsp;Internet&nbsp;and similar&nbsp;computer networks. It is commonly known as&nbsp;TCP/IP&nbsp;because the foundational protocols in the suite are the&nbsp;Transmission Control Protocol&nbsp;(TCP) and the&nbsp;Internet Protocol&nbsp;(IP).
+TCP/IP	"Common name for Internet protocol suite&nbsp;<span style=""color: rgb(34, 34, 34);"">The foundational protocols in the suite are the&nbsp;</span><a href=""https://en.wikipedia.org/wiki/Transmission_Control_Protocol"">Transmission Control Protocol</a><span style=""color: rgb(34, 34, 34);"">&nbsp;(TCP) and the&nbsp;</span><a href=""https://en.wikipedia.org/wiki/Internet_Protocol"">Internet Protocol</a><span style=""color: rgb(34, 34, 34);"">&nbsp;(IP)</span>"
+Datagram	Datagrams are typically structured in&nbsp;header&nbsp;and&nbsp;payload&nbsp;sections. Datagrams provide a&nbsp;connectionless communication&nbsp;service across a packet-switched network. The delivery, arrival time, and order of arrival of datagrams need not be guaranteed by the network.
+Backing Field	A&nbsp;field&nbsp;that will be generated for a property in a class only if it uses the default implementation of at least one of the accessors
+DRY Principle	Don't Repeat Yourself
+Broken Window Theory	"Based on a theory in criminalogy, bad code slowly leads to worse code.<br><br>""No broken windows."""
+YAGNI	"""You Aren't Gonna Need It""&nbsp;<div>A principle of&nbsp;extreme programming&nbsp;(XP) that states a&nbsp;programmer&nbsp;should not add functionality until deemed necessary<br><br></div><div><span style=""color: rgb(34, 34, 34);"">""Always implement things when you actually need them, never when you just foresee that you need them."" - Ron Jeffries</span><br></div>"

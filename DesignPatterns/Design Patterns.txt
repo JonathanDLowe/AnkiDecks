@@ -1,0 +1,19 @@
+Proxy Pattern	
+Strategy Pattern	Defines a family of algorithms, encapsulates each one, and makes them interchangable.<div>Strategy lets the algorithm vary independently from clients that use it.</div>
+Template Method Pattern	Definte the skeleton of an algorithm in an operation, deferring some step to subclasses.<div>Template method lets subclasses redefine certain steps of an algorithm without changing the algorithms structure.</div><div><br></div>
+Iterator Pattern	Provides a way to access the elements of an aaggregate object sequentially without exposing the internal structure/underlying representation of the DS.
+Composite Pattern	Compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and composition of object uniformly.
+State Pattern	Allow an object to alter its behavior when its internal state changes.<div>The object will appear to change its class.</div>
+Observer Pattern	Defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
+Decorator Pattern	Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
+Abstract Factory Pattern	Provides an interface for creating familites of related or dependent objects without specifying their concrete classes.
+Factory Method Pattern	Defines an interface for creating an object, but let subclasses decide which class to instantiate a class defer instantiation to the subclasses.
+Singleton Pattern	Ensure a class only has one instance and provide a global point of acces to it.<div>Synchroned methods</div><div>private constuctor</div><div>Accessed by instance()</div><div>Instance() returns reference to private, static, final far of type of singleton class</div><div>May employ double-checked locking</div><div>volatile in Java</div>
+Command Pattern	Encapsulates a request as an object, therby letting you parameterize clients with different request, queue, or log requests, and support undoable ops.
+Adaptor Pattern	Converts the interface of a class into another interface clients expects.<div>Lets classes work together that couldn't otherwise because of incompatible interfaces.</div>
+Facade Pattern	Provides a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use. Also used to simplify complex interface
+Builder Pattern	Solutions to massive constuctor(telescoping)<div>Parameters passed to builder object often with method chaining</div><div>Mutable class that can spit out a complete immutable object</div><div>Tightly couple to resulting class</div><div>In practice, bundled as an inner class</div>
+Mediator Pattern	
+Flyweight Pattern	
+Visitor Pattern	
+Factory Pattern	Creates objects not known at runtime<div>returns new ojbects that have a common abstract class/interface</div><div>Often implemented with static methods</div>

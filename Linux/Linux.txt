@@ -1,0 +1,9 @@
+wget	
+curl	
+ARP	Address Resulution Protocol<br><br>a&nbsp;communication protocol&nbsp;used for discovering the&nbsp;link layer&nbsp;address, such as a&nbsp;MAC address, associated with a given&nbsp;internet layer&nbsp;address, typically an&nbsp;IPv4 address. This mapping is a critical function in the&nbsp;Internet protocol suite.&nbsp;<br>
+dig	Domain Informating Groper<div>DNS Lookup Utility</div>
+snap	
+apt	
+ssh	
+chown	
+chmod	

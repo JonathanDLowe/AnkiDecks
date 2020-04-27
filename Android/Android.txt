@@ -1,5 +1,3 @@
-ActivityScenario	
-ActivityManager.RecentTaskInfo	
 Canvas	ClipOutPath|Rect()&nbsp; &nbsp; getHeight()|Width()<div>clopPath|Rect()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; save() | restore()<br>Drawing: scale()&nbsp; &nbsp; rotate()&nbsp; &nbsp; translate()&nbsp; &nbsp; skew()</div><div>drawARGB(int,int,int,int) - full canvas with color</div><div>drawArc(...)&nbsp; &nbsp; drawBitmap(...)&nbsp; &nbsp; drawCircle() drawColor()</div><div>drawLine()&nbsp; &nbsp;drawLines()&nbsp; &nbsp; drawOval()&nbsp; &nbsp; drawPaint()</div><div>drawPath() drawPoint()&nbsp; &nbsp;drawPoints()</div><div>drawRect()&nbsp; &nbsp;drawRoundRect() drawText()</div><div>drawTextOnPath()</div>
 Path	addArc() addCircle() addOval()<div>addPath() adREct() addRoundRect()</div><div>arcTo() cubicTo() lineTo() quadTo()</div><div><br></div><div>close()</div><div>rewind()</div><div>reset()</div>
 Formatter	%[arg_index$][flags][width][.precision] conversion<div>'b' 'B' boolean</div><div>'h' 'H' hashCode() toHexString()</div><div>'s' 'S' String</div><div>'c' 'C' Unicode character</div><div>'d' decimal</div><div>'o' octal</div><div>'x' 'X' hexadecimal</div><div>'e' 'E' scientific notation</div><div>'f' float</div><div>'t' 'T' date/time</div>
@@ -19,51 +17,22 @@ Fix Overdraw	Eliminate unnecessary backgrounds<div>Remove invisible views</div><
 LayoutInspector	"Tools &gt; LayoutInspector<div><br></div><div>static ""snapshot: of view heirarchy as defined in XML</div><div>does not connect to running app</div><div>Layout Inspector can help find places to optimize view hierarchy.</div>"
 Android Emulator Limitations	Doesn't include virtual hardware for:<div>Bluetooth Device-attached headphones</div><div>NFC&nbsp; &nbsp;USB&nbsp; &nbsp;SD card insert/eject</div><div>Extended sensors such as biometrics</div><div>Missing specialized sensors that some devices have</div>
 AppWidget	New &gt; Widget &gt; AppWidget<div>appwidgetprovider - Javaclass thatextends</div><div>AppWidgetProvider which inherits BroadcastReceiver</div><div>REmoteViews</div><div>onClickPendingIntent()</div><div>onEnabled() | onDisbled() open resources on first widget clean up after last wdiget removed</div><div>&lt;appwidget-provider&gt;</div><div>android:initialLayout + midWidth+ minHeight</div>
-PackageInfo	
-ModuleInfo	
-RemoteViews	
-AppWidgetProvider	
-ApplicationInfo	
 Vibrator	Context.getSystemServices(VIBRATOR_SERVICE)<div>vibrate(VibrationEffect effect)</div>
 VibrationEffect	static VibrationEffect createOneShot(long milli, int amplitude)<div>static VibrationEffect createWaveform(long[] timings, int repeat)</div><div>static VibrationEffect creatveWaveform(long[] timings, int[] amplitudes, int repeat)</div>
-Espresso	
-ViewMatchers	
-ViewActions	
-ViewAssertions	
 PackageManager	Class for retrieving various kinds of Information related to the Application packages that are currently installed on the device.<br><br>Drawable getApplicationIcon(ApplicationInfo|String packageName)<div>List&lt;ApplicationInfo&gt; getInstalledApplication(int flags)</div><div>List&lt;PackageInfo&gt; getInstalledPackages(int flags)</div><div>CharSequences getApplicationLabel(ApplicationInfo)</div>
 Class for retrieving various kinds of Information related to the Application packages that are currently installed on the device.	PackageManager
 &lt;application&gt;	AndroidManifest.xml
-View	
-IBinder	
 Android Build Process(Update needed)	1) Compiler converts src into DEX(Dalvik EXE) files<div>2) APK Packager combines DEX files Android compiled resources into<br>3) APK Packager signs APK using debug or release keystore</div><div>4) APK Packager uses zipalign to optimize memory usage on device</div><div>5) Final APK generated</div>
 BluetoothAdapter	enable() disable() cancelDiscovery()<div>static checkBluetoothAddres(String addres)</div><div>String getAddres()</div><div>Set&lt;BluetoothDevice&gt; getBondedDevices()</div><div>static getDefaultAdapter()</div><div>String getName()</div><div>int getState() isDiscovering()&nbsp; isEnabled()</div><div>setName(String name)</div><div>startDiscovery()</div>
-AppWidgetManager	
 Fragments	subclass Fragment, public no args constructor required<div>&lt;fragment/&gt; //static</div><div>Or FragmentManager::getSupportFragmentManager()</div><div>FragmentTransaction, FragmentManager::beginTransaction</div>
-AlarmManager	
 FragmentTransaction	add(int containerId, Fragment, String tag)<div>add(int containerId, Fragment)</div><div>addSharedElement(View element name)</div><div>addToBackStack(String name)</div><div>commit() | commitNow()</div><div>add() | remove() | replace()<br></div>
-NotificationManagerCompat	
-NotificationManager	
-NotificationCompat.Builder	
-Notification	
-JobService	
-JobInfo.Builder	
-JobInfo	
-Parcelable	
-Context	
-onLowMemory()	
 Threadpools	Only for massive, parallel tasks.
 JobScheduler Needs update	Batch background work<div>JobInfo.Builder(int id, ComponentName cn)</div><div>ComponentName(getPackageName(), MyClass.class JobScheduler getSystemService(JobScheduler.class)</div><div>schedule(JobInfo)</div><div>enqueue(JobInfo)</div>
 <div>Protocol Buffers</div>	Nano proto buff<div>flat buff</div>
-Activity	
 AsyncTask Call Process	Helpful, but potentially bad<div>Executes serially after Honeycomb because parallel causd errors</div><div>Steps</div><div>1) onPreExecute() - UI</div><div>2) doInBackground()</div><div>3) onProgressUpdate - UI</div><div>4) onPostExecute() - UI</div><div>cancel() | isCancelled()</div><div>executeOnExecutor() for parallel</div><div>with AsyncTask.THREAD_POOL_EXECUTOR</div>
-SyncAdapter	
-ViewGroup	
 Class for getting current Android build info.	android.os.Build<div>ex. Build.VERSION</div><div>ex. Build.VERSION_CODES</div>
 IntentService	Considering using&nbsp; JobIntentService<div>onhandleIntent(Intent) //executes on worker thread</div><div>onBind()</div><div>onStart()</div><div><br></div><div>Stops self after intents are handled</div><div>No stopSelf() needed.<br><div><br></div></div>
-Content Provider	
-Broadcast Receiver	
 Service	Watch for Started vs Bound services<div>startService() | stopService() | bindService() unbind()</div><div>must match number of binds and unbinds for service to stop.</div>
-Service vs IntentService vs JobIntentService	
 Room Database	Architectural Components<div>Database layer on top of SQLite</div><div>database that takes care of mundane tasks that you&nbsp; used to handle with a helper class. Room database uses the DAO to issue queries to the SQLite database base on functions call. Uses annotations to generate SQL query.</div>
 Repository(Room)	Architecture Component<div>A class you create for mananging multiple data sources. In addition to a Room database, the Repository could manage remote data sources such as a server</div>
 ViewModel Needs Update	Architectural Components<br>Provides data to the UI and can act as a communication center between the Repository and the UI. Hides backend from UI. ViewModel instances survive device config changes.
@@ -75,24 +44,17 @@ Entity(Room)	"Annotated class that describes a database table<div>@Entity(tableN
 An annotation that declares an argument cannot be null.	@NotNull
 NavigationUI	Class whic hooks up elements of navigation<div>Associated with the Navigation Graph</div>
 Configuration	Contains the current configuration values<div>Received in onConfigurationChanged(Configuartioin newConfig)</div><div>Can be read to manually handle configuration changes&nbsp;</div><div>getResources().getConfiguration() to read the current configuration values.</div>
-UiModeManager	
 Lifecycle	Arch. Component
 Task	"Collection of activities that user interacts with while performing a job<div>Cohesive unit that can move to the ""background"" when user begins a new task or pressed Home.</div>"
-onNewIntent()	
 ActivityManager	Class gives info about, and interacts with activies, services, and the containing process.
 ActivityManager.AppTask	AppTask allows you to manage your own app's task.<div>ActivityManager.getAppTask()</div>
 Lifecycle.State	Used in ActivityScenario for testing<div>CREATED</div><div>DESTROYED</div><div>INITIALIZED</div><div>RESUMED</div><div>STARTED</div>
 FLAG_ACTIVITY_NEW_TASK	"Intent Flag<div>started activity will become the start of a new activity</div><div>Used to present ""launcher"" style behavior i.e. list of separate things that are otherwise run completel independently</div><div>If task is already runing current taskgroud to foreground</div><div>See *_MULTIPLE_TASK for flag to disable.</div>"
 FLAG_ACTIVITY_CELAR_TOP	Intent Flag<div>If set, and activity being launched is already running in current task then isntead of new instance, all activities on top of it will be closed and intent will be delivered to now on top&nbsp; existing activity's onNewIntent(FLAG_ACTIVITY_SINGLE_TOP) or it will be finished() and recreated with new intent.</div><div>_CLEAR_TOP | _NEW_TASK to pull existing task to foreground and clears to root state&nbsp;</div>
 Core App Components (6)	Activities<div>Fragments</div><div>Services</div><div>Broadcast Receivers</div><div>Intent Filters</div><div>Content Providers</div>
-ProGuard	
 FLAG_ACTIVITY_SINGLE_TOP	Intent flag<div><br></div><div>If set, the activity will not be lauched if it is already running at the top of the history stack.</div>
-Resources	
 Log	Log.v(), Log.d() Log.i() Log.w() Log.e()<div>Verbosity(Least to most)&nbsp;</div><div>ERROR, WARN, INFO, DEBUG, VERBOSE</div><div>Verbose should never be compiled in except for dev builds.</div><div>Debug are compiled in but stripped at runtime.</div><div>Error, warn, info always kept</div><div>BP: declare TAG constant</div><div>BP: beware of allocation in Log. Filtered messages would be doing useless work.</div>
 <div>ExecutorCompletionService</div>	CompletionService
-AssetManager	
-SecurityException	
-Default Handler	
 MessageQueue	"Low-level class holding messages to be dispatched by a lopper<div>Messagers not added directly, but through handlers</div><div>See Handler::<br>sendMessage(Message), <br>sendMessageDelayed (Message msg, long delayMillis)</div><div><a href=""https://developer.android.com/reference/android/os/Handler#sendMessageAtTime(android.os.Message,%20long)"">sendMessageAtTime</a><span style=""color: rgb(32, 33, 36); background-color: rgba(255, 255, 255, 0.95);"">(</span><a href=""https://developer.android.com/reference/android/os/Message"">Message</a><span style=""color: rgb(32, 33, 36); background-color: rgba(255, 255, 255, 0.95);"">&nbsp;msg,&nbsp;long uptimeMillis)</span><br></div><div>Message obtainMessage (int what, Object obj)<span style=""color: rgb(32, 33, 36); background-color: rgba(255, 255, 255, 0.95);""><br></span></div>"
 Handler	"<div>A Handler allows you to send and process&nbsp;Message&nbsp;and Runnable objects associated with a thread's&nbsp;MessageQueue. Each Handler instance is associated with a single thread and that thread's message queue. When you create a new Handler it is bound to a&nbsp;Looper. It will deliver messages and runnables to that Looper's message queue and execute them on that Looper's thread.</div><div>sendMessage*() handled by thread of Lupper used to instance</div><div>sendMessage(Message),&nbsp;&nbsp;<br>sendMessageDelayed (Message msg, long delayMillis)</div><div><a href=""https://developer.android.com/reference/android/os/Handler#sendMessageAtTime(android.os.Message,%20long)"">sendMessageAtTime</a><span style=""color: rgb(32, 33, 36); background-color: rgba(255, 255, 255, 0.95);"">(</span><a href=""https://developer.android.com/reference/android/os/Message"">Message</a><span style=""color: rgb(32, 33, 36); background-color: rgba(255, 255, 255, 0.95);"">&nbsp;msg,&nbsp;long uptimeMillis)</span><br></div><div>Message obtainMessage (int what, Object obj)</div><div>dispateMessage(Message) - direct call, runs handleMessage() on current thread<br></div>"
 HandlerThread	Thread with a Looper<div>Lopper can be used to creat Handlers</div><div>Call Thread.start() like other threads</div><div>If run() is overriden remember to use Lopper::prepare()</div><div>and end w/ Looper::loop()</div>
@@ -102,38 +64,18 @@ Looper	Class to create message loop for Thead<div>prepare() - innit current thre
 "<span style=""color: rgb(55, 71, 79); background-color: rgb(241, 243, 244);"">AdvertisingIdClient (Update)</span>"	AdvertisingIdInfo
 Intent	"<span style=""color: rgb(32, 33, 36);"">a passive data structure holding an abstract description of an action to be performed with data.<br>Ex. launching and passing data to other activites in app, requesting external actions like send email or get picture</span><div><font color=""#202124""><br></font><div><font color=""#202124"">Intent(String action), Intent(String action, Uri uri), Intent(Context packageContext, Class&lt;?&gt; cls) - launching activity directly<br></font><div><span style=""color: rgb(32, 33, 36);"">putExtra(String key, &lt;Type&gt; value)</span></div><div><span style=""color: rgb(32, 33, 36);"">get&lt;Type&gt;Extra(key, default value)</span></div></div></div>"
 Intent Structure	- action<div>- data</div><div>Optional</div><div>- category</div><div>- type</div><div>- component</div><div>- extras</div>
-androidx.annotations	
 Ninja Build System Component	Used to build parts of Androi
-SOONG Build System	
-&lt;layout&gt;	
-&lt;merge&gt;	
 OnLifecycleEvent	annotation
 MVVM	Model-View-ViewModel Pattern
-MutableLiveData&lt;T&gt;	
-ViewModelFactory	
-ViewModel	
-Sealed Class	
 InstrumentationRegistry	androidx.test.platform.app
-ApplicationProvider	
 DiffUtil	class in RecyclerView<div>Eugene W. Meyer's Difference Algorithm</div>
-@BindingAdapter	
-@Spy	
 BluetoothManager	Context.getSystemService(BluetoothManager.class)<div>BluetoothAdapter getAdapter()</div><div>Context.getSystemService(Context.BLUETOOTH_SERVICE)</div><div>List&lt;BluetoohtDevice&gt; getConnectedDevices(int profile)</div><div>int getConnectionState(BluetoothDevice device, int profile)</div>
-SurfaceHolder	
-ActivityInfo	
-SensorEvent	
-SensorListener	
-SensorManager	
-Sensor	
-Geocoder	
 InputMethodManager	<div>input method framework (IMF) architecture</div>input method manager<div>input method</div><div>client application</div><div>Input Method Service</div>
-ValueAnimator	
-Bitmap.Config	
-Bitmap	
-Rect	
-Place	
-androidx.annotation	
-PlaceDetectionClient	
-Format	
-NumberFormat	
-<div>DateFormat</div>	
+ConfigurationInfo	"<span style=""color: rgb(32, 33, 36);"">Information you can retrieve about hardware configuration preferences declared by an application. This corresponds to information collected from the AndroidManifest.xml's &lt;uses-configuration&gt; and &lt;uses-feature&gt; tags.</span>"
+FeatureGroupInfo	A set of features that can be requested by an application. This corresponds to information collected from the AndroidManifest.xml's&nbsp;&lt;feature-group&gt;&nbsp;tag.
+PermissionInfo	Information you can retrieve about a particular security permission known to the system. This corresponds to information collected from the AndroidManifest.xml's &lt;permission&gt; tags.
+ProviderInfo	Holds information about a specific&nbsp;content provider. This is returned by&nbsp;PackageManager.resolveContentProvider().
+FeatureInfo	<div>Definition of a single optional hardware or software feature of an Android device.</div><div><br></div><div>This object is used to represent both features supported by a device and features requested by an app. Apps can request that certain features be available as a prerequisite to being installed through the&nbsp;uses-feature&nbsp;tag in their manifests.</div><div><br></div><div>Starting in&nbsp;Build.VERSION_CODES.N, features can have a version, which must always be backwards compatible. That is, a device claiming to support version 3 of a specific feature must support apps requesting version 1 of that feature.</div>
+ServiceInfo	Information you can retrieve about a particular application service. This corresponds to information collected from the AndroidManifest.xml's &lt;service&gt; tags.
+AAPT2	"<div>AAPT2 (Android Asset Packaging Tool) is a build tool that Android Studio and Android Gradle Plugin use to compile and package your app’s&nbsp;<a href=""https://developer.android.com/guide/topics/resources/providing-resources"">resources</a>. AAPT2 parses, indexes, and compiles the resources into a binary format that is optimized for the Android platform.</div><div>Android Gradle Plugin 3.0.0 and higher enable AAPT2 by default, and you typically won't need to invoke&nbsp;<code>aapt2</code>&nbsp;yourself. However, if you prefer to use your terminal and your own build system over Android Studio, you can use AAPT2 from the command line. You can also debug build errors related to AAPT2 from the command line. To do so, you can find AAPT2 as a standalone tool in&nbsp;<a href=""https://developer.android.com/studio/releases/build-tools"">Android SDK Build Tools</a>&nbsp;26.0.2 and higher.</div>"
+sdkmanager	<div>The&nbsp;sdkmanager&nbsp;is a command line tool that allows you to view, install, update, and uninstall packages for the Android SDK. If you're using Android Studio, then you do not need to use this tool and you can instead&nbsp;manage your SDK packages from the IDE.</div><div>The&nbsp;sdkmanager&nbsp;tool is provided in the Android SDK Tools package (25.2.3 and higher) and is located in&nbsp;android_sdk/tools/bin/.</div>
