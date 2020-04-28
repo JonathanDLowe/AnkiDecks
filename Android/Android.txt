@@ -79,3 +79,65 @@ FeatureInfo	<div>Definition of a single optional hardware or software feature of
 ServiceInfo	Information you can retrieve about a particular application service. This corresponds to information collected from the AndroidManifest.xml's &lt;service&gt; tags.
 AAPT2	"<div>AAPT2 (Android Asset Packaging Tool) is a build tool that Android Studio and Android Gradle Plugin use to compile and package your app’s&nbsp;<a href=""https://developer.android.com/guide/topics/resources/providing-resources"">resources</a>. AAPT2 parses, indexes, and compiles the resources into a binary format that is optimized for the Android platform.</div><div>Android Gradle Plugin 3.0.0 and higher enable AAPT2 by default, and you typically won't need to invoke&nbsp;<code>aapt2</code>&nbsp;yourself. However, if you prefer to use your terminal and your own build system over Android Studio, you can use AAPT2 from the command line. You can also debug build errors related to AAPT2 from the command line. To do so, you can find AAPT2 as a standalone tool in&nbsp;<a href=""https://developer.android.com/studio/releases/build-tools"">Android SDK Build Tools</a>&nbsp;26.0.2 and higher.</div>"
 sdkmanager	<div>The&nbsp;sdkmanager&nbsp;is a command line tool that allows you to view, install, update, and uninstall packages for the Android SDK. If you're using Android Studio, then you do not need to use this tool and you can instead&nbsp;manage your SDK packages from the IDE.</div><div>The&nbsp;sdkmanager&nbsp;tool is provided in the Android SDK Tools package (25.2.3 and higher) and is located in&nbsp;android_sdk/tools/bin/.</div>
+&lt;manifest&gt;	
+&lt;uses-permission...&gt;	
+&lt;activity&gt;	Declares an activity (an&nbsp;Activity&nbsp;subclass) that implements part of the application's visual user interface.
+onCreate()	The only lifecycle that must be implemented in an Activity.&nbsp;<div><br></div><div>Must call setContentView() to define layout for UI<br><div><br></div><div>Initialized essental components of activity here.</div></div>
+What lifecycle callback follows onCreate()?	onStart()
+onStart()	Entered after onCreate() exits.<br><br>Enters Started state.<div><br></div><div>Activity's final preparation for coming to the foreground and becoming interactive.</div>
+OnResume()	Invoked just before activity becomes interactive.<br><br>It is on top of the stack and captures all UI input.<br><br>Most of app functionality will be implemented here.<div><br></div><div>onPause() always follows onResume()</div>
+What is the first lifecycle callback invoked for an activity?	onCreate()
+What lifecycle callback follows onStart()?	onResume()
+What lifecycle callback always follows onResume()?	onPause()
+onPause()	Called when activity loses focus and enters a Paused state.<div><br></div><div>Activities still visible, but often indicates user is leaving activity.</div><div><br></div><div>DO NOT use onPause for saving app data, making network calls, or execute database transactions.</div>
+What callbacks may follow onPause()?	onStop() if activity is no longer visible or onResume() if user returns to app.&nbsp;
+onStop()	"Called when activity is no longer visible to the user.&nbsp;<div><br></div><div><span style=""color: rgb(32, 33, 36);"">This may happen because the activity is being destroyed, a new activity is starting, or an existing activity is entering a Resumed state and is covering the stopped activity.&nbsp;</span></div>"
+What lifecycle callbacks may follow onStop()?	Either onRestart() if user is coming back to app, or onDestroy() if activity is completely terminating
+onRestart()	Called after an activity has entered a Stopped state and user returned.
+onDestroy()	Callback invoked before an activity is destroyed.<div><br>onDestroy()&nbsp;is usually implemented to ensure that all of an activity’s resources are released when the activity, or the process containing it, is destroyed.<br></div>
+setContentView()	public void setContentView (int layoutResID)<div>public void setContentView (View view)<br></div>
+Bundle	A mapping from String keys to various&nbsp;Parcelable&nbsp;values
+"<span style=""color: rgb(32, 33, 36);"">@OnLifecycleEvent(</span>Lifecycle.Event<span style=""color: rgb(32, 33, 36);"">)</span>"	Marks a method of a LifecycleObserver to be called when the Lifecycle.Event is triggered.<br>
+Types of Lifecycle.Event	ON_ANY<div>ON_CREATE<br></div><div>ON_DESTROY</div><div>ON_PAUSE</div><div>ON_RESUME</div><div>ON_START</div><div>ON_STOP<br></div>
+LifecycleObserver	Marks a class as a LifecycleObserver. It does not have any methods, instead, relies on&nbsp;OnLifecycleEvent&nbsp;annotated methods.
+Created state activity's likelihood of being killed	Least
+"<span style=""color: rgb(32, 33, 36); background-color: rgba(255, 255, 255, 0.95);"">Started&nbsp;</span>state activity's likelihood of being killed"	Least
+"<span style=""color: rgb(32, 33, 36); background-color: rgba(255, 255, 255, 0.95);"">Resumed&nbsp;</span>state activity's likelihood of being killed<br>"	Least
+"<span style=""color: rgb(32, 33, 36); background-color: rgba(255, 255, 255, 0.95);"">Paused&nbsp;</span>state activity's likelihood of being killed"	"<span style=""color: rgb(32, 33, 36); background-color: rgba(255, 255, 255, 0.95);"">More</span>"
+"<span style=""color: rgb(32, 33, 36); background-color: rgba(255, 255, 255, 0.95);"">Stopped&nbsp;</span>state activity's likelihood of being killed"	"<span style=""color: rgb(32, 33, 36); background-color: rgba(255, 255, 255, 0.95);"">Most</span>"
+"<span style=""color: rgb(32, 33, 36); background-color: rgba(255, 255, 255, 0.95);"">Destroyed&nbsp;</span>state activity's likelihood of being killed"	Most
+Activity states most likely to be killed&nbsp;	"<span style=""color: rgb(32, 33, 36); background-color: rgba(255, 255, 255, 0.95);"">Stopped</span><div><span style=""color: rgb(32, 33, 36); background-color: rgba(255, 255, 255, 0.95);"">Destroyed</span><span style=""color: rgb(32, 33, 36); background-color: rgba(255, 255, 255, 0.95);""><br></span></div>"
+Activity states more likely to be killed&nbsp;	"<span style=""color: rgb(32, 33, 36); background-color: rgba(255, 255, 255, 0.95);"">Paused</span>"
+Activity states lease likely to be killed&nbsp;	<table><tbody><tr><td>Created<br>Started<br>Resumed</td></tr><tr></tr></tbody></table>
+onSaveInstanceState(Bundle)	"<span style=""color: rgb(32, 33, 36);"">This method is called before an activity may be killed so that when it comes back some time in the future it can restore its state<br><br>&nbsp;</span>Always call super.onSaveInstanceState(Bundle)&nbsp;so the default implementation can restore the state of the view hierarchy.<div><span style=""color: rgb(32, 33, 36);""><br>Not called after finish()</span></div>"
+onRestoreInstanceState(Bundle)	Always call super.onRestoreInstanceState()&nbsp;so the default implementation can restore the state of the view hierarchy.<br><br>This method is called after&nbsp;onStart()&nbsp;when the activity is being re-initialized from a previously saved state.<br><div><br></div><div>Most implementation will do this in onCreate(Bundle)</div>
+onPostCreate(Bundle)	Applications will generally not implement this method; it is intended for system classes to do final initialization after application code has run.
+startActivityForResult	<div>Launch an activity for which you would like a result when it finished. When this activity exits, your onActivityResult() method will be called with the given requestCode<br></div><div><br></div>public void startActivityForResult (Intent intent, int requestCode)&nbsp;
+"<span style=""color: rgb(32, 33, 36);"">Lifecycle transition</span>"	"<span style=""color: rgb(32, 33, 36);"">When one activity starts another, they both experience lifecycle transitions<br><br></span>1. Activity A's&nbsp;onPause()&nbsp;method executes.<div>2. Activity B's&nbsp;onCreate(),&nbsp;onStart(), and&nbsp;onResume()&nbsp;methods execute in sequence. (Activity B now has user focus.)<div>3. Then, if Activity A is no longer visible on screen, its&nbsp;onStop()&nbsp;method executes.<span style=""color: rgb(32, 33, 36);""><br></span></div></div>"
+onConfigurationChanged(Configuration)	Called by the system when the device configuration changes while your activity is running. Note that this will&nbsp;only&nbsp;be called if you have selected configurations you would like to handle with the&nbsp;R.attr.configChanges&nbsp;attribute in your manifest.&nbsp;
+&lt;action&gt;	"<span style=""color: rgb(32, 33, 36);"">Adds an action to an intent filter.&nbsp;</span>"
+&lt;activity-alias&gt;	"<span style=""color: rgb(32, 33, 36);"">The alias presents the target activity as an independent entity. It can have its own set of intent filters, and they, rather than the intent filters on the target activity itself, determine which intents can activate the target through the alias and how the system treats the alias.&nbsp;</span>"
+&lt;category&gt;	"<span style=""color: rgb(32, 33, 36);"">Adds a category name to an intent filter.</span>"
+&lt;compatible-screens&gt;	
+&lt;data&gt;	
+&lt;grant-uri-permission&gt;	
+&lt;instrumentation&gt;	
+&lt;intent-filter&gt;	
+&lt;meta-data&gt;	
+&lt;path-permission&gt;	
+&lt;permission&gt;	
+&lt;permission-group&gt;	
+&lt;permission-tree&gt;	
+&lt;provider&gt;	
+&lt;receiver&gt;	
+&lt;service&gt;	
+&lt;supports-gl-texture&gt;	
+&lt;supports-screens&gt;	
+&lt;uses-configuration&gt;	
+&lt;uses-feature&gt;	
+&lt;uses-library&gt;	
+&lt;uses-permission&gt;	
+&lt;uses-permission-sdk- 23&gt;	
+&lt;uses-sdk&gt;	
+onBackPressed()	"By default, doesn't trigger onSaveInstanceState()<div><br></div><div>Override to implement some custom behavior, for e.g. a ""confirm-quit"" dialog.<br></div>"
+Fragment	
