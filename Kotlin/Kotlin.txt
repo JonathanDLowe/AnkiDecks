@@ -1,0 +1,79 @@
+as	- is used for&nbsp;type casts<div>- specifies an&nbsp;alias for an import&nbsp;</div><div>&nbsp;</div><div>hard keyword</div>
+as?	used for&nbsp;safe type casts&nbsp;<div>&nbsp;</div><div>hard keyword</div>
+break	terminates the execution of a loop&nbsp;<div>&nbsp;</div><div>hard keyword</div>
+class	Declares a class&nbsp;<div>&nbsp;</div><div>hard keyword</div>
+continue	proceeds to the next iteration of the enclosing loop&nbsp;<div>&nbsp;</div><div>hard keyword</div>
+do	begins a do/while loop(loop with post condition)&nbsp;<div>&nbsp;</div><div>hard keyword</div>
+else	defines the branch of an if expression to be executed if condition evaluates to false&nbsp;<div>&nbsp;</div><div>hard keyword</div>
+false	false value of the Boolean type&nbsp;<div>&nbsp;</div><div>hard keyword</div>
+for	begins a for loop&nbsp;<div>&nbsp;</div><div>hard keyword</div>
+if	begins an if expression&nbsp;<div>&nbsp;</div><div>hard keyword</div>
+in	- specifies the object being iterated in a&nbsp;for loop<div>- is used as an infix operator to check that a value belongs to&nbsp;a range, a collection or another entity that&nbsp;defines the 'contains' method</div><div>- is used in&nbsp;when expressions&nbsp;for the same purpose</div><div>- marks a type parameter as&nbsp;contravariant&nbsp;</div><div>&nbsp;</div><div>hard keyword</div>
+!in	- is used as an operator to check that a value does NOT belong to&nbsp;a range, a collection or another entity that&nbsp;defines the 'contains' method<div>- is used in&nbsp;when expressions&nbsp;for the same purpose&nbsp;<br></div><div>&nbsp;</div><div>hard keyword</div>
+interface	declares an interface&nbsp;<div>&nbsp;</div><div>hard keyword</div>
+is	- checks that&nbsp;a value has a certain type<div>- is used in&nbsp;when expressions&nbsp;for the same purpose&nbsp;</div><div>&nbsp;</div><div>hard keyword</div>
+!is	- checks that&nbsp;a value does NOT have a certain type<div>- is used in&nbsp;when expressions&nbsp;for the same purpose&nbsp;</div><div>&nbsp;</div><div>hard keyword</div>
+null	constant representing an object reference that doesn't point to any object&nbsp;<div>&nbsp;</div><div>hard keyword</div>
+object	declares a class and its instance at the same time&nbsp;<div>&nbsp;</div><div>hard keyword</div>
+package	specifies that package for the current file&nbsp;<div>&nbsp;</div><div>hard keyword</div>
+return	returns from the nearest enclosing function or anonymous function&nbsp;<div>&nbsp;</div><div>hard keyword</div>
+super	- refers to the superclass implementation of a method or property<div>- calls the superclass constructor from a secondary constructor&nbsp;</div><div>&nbsp;</div><div>hard keyword</div>
+this	- refers to&nbsp;the current receiver<div>- calls another constructor of the same class from a secondary constructor&nbsp;</div><div>&nbsp;</div><div>hard keyword</div>
+throw	throws an exception&nbsp;<div>&nbsp;</div><div>hard keyword</div>
+true	specifies the 'true' value of the Boolean type&nbsp;<div>&nbsp;</div><div>hard keyword</div>
+try	begins an exception handling block&nbsp;<div>&nbsp;</div><div>hard keyword</div>
+typealias	declares a type alias&nbsp;<div>&nbsp;</div><div>hard keyword</div>
+typeof	reserved for future use&nbsp;<div>&nbsp;</div><div>hard keyword</div>
+val	declares a read-only property or local variable&nbsp;<div>&nbsp;</div><div>hard keyword</div>
+var	declares a mutable property or local variable&nbsp;<div><br></div><div>hard keyword</div>
+when	begins a when expression, similar to switch.&nbsp;<div><br></div><div>hard keyword</div>
+while	begins a while loop&nbsp;<div><br></div><div>hard keyword</div>
+Soft Keyword	"<span style=""color: rgb(51, 51, 51);"">Tokens that act as keywords in the context when they are applicable and can be used as identifiers in other contexts.</span>"
+Hard Keyword	"<span style=""color: rgb(51, 51, 51);"">Tokens that are always interpreted as keywords and cannot be used as identifiers.</span>"
+by	- delegates the implementation of an interface to another object<div>- delegates the implementation of accessors for a property to another object</div>
+catch	begins a block that handles a specific exception type.<div><br></div><div>soft keyword</div>
+constructor	declares a primary or secondary constructor.<div><br></div><div>soft keyword</div>
+delegate	Used as an annotation use-site target.<div><br></div><div>soft keyword</div>
+dynamic	references a dynamic type in Kotlin/JS code.
+field	Used as an annotation use-site target.<div><br></div><div>soft keyword</div>
+file	Use as an annotation use-site target.<div><br></div><div>soft keyword</div>
+finally	begins a block that is always execute when a try block exits<div><br></div><div>soft keyword</div>
+get	- declares the getter of a property<div>- is used as an annotation use-site target.</div><div><br></div><div>soft keyword</div>
+import	imports a declaration from another package int the current file&nbsp;<div><br></div><div>- soft keyword</div>
+init	begins an initializer block.<div><br></div><div>- soft keyword</div>
+param	Used as an annotation use-site target.<div><br></div><div>- soft keywords</div>
+property	Used as an annotation use-site target.<div><br></div><div>- soft keyword</div>
+receiver	Used as an annotation use-site target.<div><br></div><div>- soft keyword</div>
+set	- declares the setter of a property<div>- used as an annotation use-site target</div><div><br></div><div>soft keyword</div>
+setparam	Used as an annotation use-site target<div><br></div><div>- soft keyword</div>
+where	specifies constraints for a generic type parameter<div><br></div><div>- soft keyword</div>
+actual	Denotes a platform-specific implementation in multiplatform projects<div><br></div><div>- modifier keywords</div>
+abstract	marks a class or member as abstract<div><br></div><div>- modifier keyword</div>
+annotation&nbsp;	declares an annotation class<div><br></div><div>- modifier keyword</div>
+companion	declares a companion object<div><br></div><div>- modifier keyword</div>
+const	marks a property as a compile-time constant<div><br></div><div>- modifier keyword</div>
+crossinline	forbids non-local returns in a lambda passed to an inline function<div><br></div><div>- modifier keyword</div>
+data	instructs the compiler to gerneate canonical members for a class<div><br></div><div>- modifier keyword</div>
+enum	declares an enumeration<div><br></div><div>- modifier keyword</div>
+expect	marks a declaration as platform-specific, expectiong an implementation in platform modules.<div><br></div><div>- modifier keyword</div>
+external	marks a declaration as implemented not in Kotlin (accessible through JNI or in JavaScript)<div><br></div><div>- modifier keyword</div>
+final	forbids overriding a member.<div><br></div><div>- modifier keyword</div>
+infix	allows referring to the outer class instance from a nested class<div><br></div><div>- modifier</div>
+inline	tells the compiler to inline the function and the lambdas passed to it at the call site
+inner	allows referring to the outer class instance from a nested class<div><br></div><div>- modifier keyword</div>
+internal	marks a declaration as visible in the current module.<div><br></div><div>- modifier keyword</div>
+lateinit	allows initializaing a non-null property outside of a constructor<div><br></div><div>- modifier keyword</div>
+noinline	turns off inlining of a lambda passed to an inline function<div><br></div><div>- modifier keyword</div>
+open	allows subclassing a class or overriding a member<div><br></div><div>- modifier keyword</div>
+operator	marks a function as overloading an operator or implementing a convention<div><br></div><div>- modifier keyword</div>
+out	marks a type parameter as covariant<div><br></div><div>- modifier keyword</div>
+override	marks a member as an override of a superclass member<div><br></div><div>- modifier keyword</div>
+private	marks a declaration as visible in the current class or file<div><br></div><div>- modifier keyword</div>
+protected	marks a declaration as visible in the current class and its subclasses<div><br></div><div>- modifer keyword</div>
+public	marks a declaration as visible anywhere<div><br></div><div>- modifier keyword</div>
+reified	marks a type parameter of an inline function as accessible at runtime.<div><br></div><div>- modifier keyword</div>
+sealed	declares a sealed class ( a class with restricted subclassing.)<div><br></div><div>- modifier keyword</div>
+suspend	marks a function or lambda as suspending (usable as a coroutine)<div><br></div><div>- modifier keyword</div>
+tailrec	marks a function as tail-recursive ( allowing the compiler to replace recursion with iteration.)
+vararg	allows passing a variable number of arguments for a parameter.<div><br></div><div>- modifier keyword</div>
+it	used inside a lambda to refer to its parameter implicitly<div><br></div><div>- special identifier</div>
