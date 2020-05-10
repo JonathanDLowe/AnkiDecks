@@ -58,7 +58,7 @@ C.R.U.D	Operations performed on a database or a designation for a basic app prov
 Colossus	SRE
 BigTable	SRE
 Chubby	Lock Service<div>- locks across data centers</div><div>- paxos protocal for asyn consensus for data</div>
-Missing Interface	cat /proc/net/dev<div>lspci</div><div>sudo lshw -C network</div><div>wpasupplicant not installed by default</div><div>netplan has password in plan text</div><div>Not readable after</div><div>sudo chmod root:root path/to/file</div><div>sudo chmod 6t00 path/to/file</div>
+Missing Interface sudo cm	cat /proc/net/dev<div>lspci</div><div>sudo lshw -C network</div><div>wpasupplicant not installed by default</div><div>netplan has password in plan text</div><div>Not readable after</div><div>sudo chown root:root path/to/file</div><div>sudo chmod 6t00 path/to/file</div>
 Position-Independent Code(PIC)	Code that executes properly regardless of its absolute address
 Machine using wrong default network interface	ip route<div>ip route delete &lt;ipaddress&gt;</div><div>ip route add &lt;ipaddress&gt;</div>
 Borg	Cluster Operating System<div>Borg Naming Service(BNS)</div>
@@ -115,3 +115,5 @@ Backing Field	A&nbsp;field&nbsp;that will be generated for a property in a class
 DRY Principle	Don't Repeat Yourself
 Broken Window Theory	"Based on a theory in criminalogy, bad code slowly leads to worse code.<br><br>""No broken windows."""
 YAGNI	"""You Aren't Gonna Need It""&nbsp;<div>A principle of&nbsp;extreme programming&nbsp;(XP) that states a&nbsp;programmer&nbsp;should not add functionality until deemed necessary<br><br></div><div><span style=""color: rgb(34, 34, 34);"">""Always implement things when you actually need them, never when you just foresee that you need them."" - Ron Jeffries</span><br></div>"
+Adjacency List	
+Adjacency Matrix	

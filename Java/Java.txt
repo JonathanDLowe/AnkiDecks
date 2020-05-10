@@ -62,3 +62,4 @@ Bitwise Operators	| - OR<div>&amp; - AND</div><div>^ - XOR</div><div>~ 0 Complem
 Abstract Class	-Class extends abstrac implements interface<div>- first nonabstract subclass must implement abstract methods</div><div>- cannot be instantiated</div><div>- cannot be private or final (class or methds)</div><div>- abstract methods onlin in abstract claass and cannot have a body unless marked default</div><div>interface vars are public, static, final</div><div>-vars must be set on declare because final</div>
 Enum type	- not int like c++, use ordinal() for int<div>- cannot extend</div><div>- valueOf() is case-sensitive</div><div>- only private constructor<br><div><br></div></div>
 TreeMap	Map.Entry&lt;K,V&gt; ceinlingEntry(K key)<div>K ceilingKey(K key)</div><div>Map.Entry floorEntry(K key)</div><div>K floorKey(K key)</div><div>firstEntry(), lastEntry()</div><div>lowerEntry(), lowerKey()</div><div>higherEntry(), higherKey()&nbsp;</div>
+Integer	
