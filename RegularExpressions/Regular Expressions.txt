@@ -5,7 +5,7 @@ Not Whitespace Character	\W
 Not Digit Character	\D
 Not Word Character	\W
 Any of a, b, or c	[abc]
-Any character not a, b, or c	not a, b, c
+Any character not a, b, or c	[^abc]
 Capture group	()
 0 or more of character	*
 1 or more of character	+
@@ -17,3 +17,9 @@ Match this or that	(this|that)
 Match 1 or more, but as few as possible	a+?
 Match 2 or more but as few as possible	a{2,}?
 Any character except newline	.
+Anchor start of string	^
+Anchor to the end of a string	$
+Anchor to a word boundary	\b
+Anchor to a not word boundary	\B
+What is considered a word boundary?	The first or last character of a string i.e. any character next to a whitespace character.
+What is considered not a word boundary?	A character that is not next to a whitespace character
