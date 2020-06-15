@@ -1,0 +1,19 @@
+Word character	\w
+Digit character	\d
+Whitespace character	\s
+Not Whitespace Character	\W
+Not Digit Character	\D
+Not Word Character	\W
+Any of a, b, or c	[abc]
+Any character not a, b, or c	not a, b, c
+Capture group	()
+0 or more of character	*
+1 or more of character	+
+0 or 1 of character	?
+Repeat exactly 5 time	{5}
+Repeat 5 or more times	{5,}
+Repeat 1 to 5 times	{1,5}
+Match this or that	(this|that)
+Match 1 or more, but as few as possible	a+?
+Match 2 or more but as few as possible	a{2,}?
+Any character except newline	.
