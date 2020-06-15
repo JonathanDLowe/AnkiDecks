@@ -1,0 +1,47 @@
+HTTP Status Code Categories	RFC 7231<div>1) Information (100 - 199)</div><div>2) Success (200 - 299)</div><div>3) Redirects (300 - 399)</div><div>4) Client Errors (400 - 499)</div><div>5) Server Errors (500 - 599)</div>
+HTTP	Hyper Text Transfer Protocol<div>Communication between client/server</div><div>HTTP Request -&gt; Response</div><div>Independant</div><div>TCP/IP based, Application layer</div><div>Stateless</div>
+HTTPS	"<span style=""color: rgb(77, 81, 86);"">Hypertext Transfer Protocol Secure</span>"
+HTTP Methods	GET<div>HEAD<br><div>POST</div><div>PUT</div><div>DELETE</div><div>CONNECT</div><div>OPTIONS</div><div>TRACE</div><div>PATCH</div></div>
+HTTP Header Types	- General headers&nbsp;apply to both requests and responses, but with no relation to the data transmitted in the body.<div><br><div>- Request headers&nbsp;contain more information about the resource to be fetched, or about the client requesting the resource.</div><div><br></div><div>- Response headers&nbsp;hold additional information about the response, like its location or about the server providing it.</div><div><br></div><div>- Entity headers&nbsp;contain information about the body of the resource, like its&nbsp;content length&nbsp;or&nbsp;MIME type.</div></div>
+HTTP Header Type	<div>General-header:&nbsp;These header fields have general applicability for both request and response messages.</div><div>Client Request-header:&nbsp;These header fields have applicability only for request messages.</div><div>Server Response-header:&nbsp;These header fields have applicability only for response messages.</div><div>Entity-header:&nbsp;These header fields define meta information about the entity-body or, if no body is present, about the resource identified by the request.</div>
+HTTP 1.1. vs 2.0	
+Status Code 100	Continue - Server has received the first part of the request and the client should sent the rest of the body.<div>Example: Client sets Expect: 100 in header for initial request to confirm server will accept a large file instead of just trying to POST without checking.</div>
+Status Code 101	Switching Protocols
+Status Code 200	OK
+Status Code 201	Created
+Status Code 202	Accepted
+Status Code 203	Non-Authoritative Information
+Status Code 204	No Content
+Status Code 300	Multiple Choices
+Status Code 301	Moved Permanently
+Status Code 302	Found
+Status Code 303	See Other
+Status Code 304	Not Modified
+Status Code 400	Bad Request
+Status Code 401	Unauthorized
+Status Code 403	Forbidden
+Status Code 404	Not Found
+Status Code 409	Conflict
+What is the status code for OK?	200
+What are status code 1XX for?	Informational
+What are status code 2XX for?	Success
+What are status code 3XX for?	Redirection
+What are status code 4XX for?	Client Error
+Status Code 500	Internal Server Error
+What is the status code for Internal Server Error?	500
+What is the status code for Conflict?	409
+What is the status code for Not Found?	404
+What is the status code for Forbidden?	403
+What is the status code for Unauthorized?	401
+What is the status code for Bad Request?	400
+What is the status code for Not Modified?	304
+What is the status code for See Other?	303
+What is the status code for Found?	302
+What is the status code for Moved Permanently?	301
+What is the status code for Multiple Choices?	300
+What is the status code for No Content?	204
+What is the status code for Non-Authoritative Information?	203
+What is the status code for Accepted?	202
+What is the status code for Created?	201
+"What is the status code for&nbsp;<span style=""background-color: rgb(255, 255, 255);"">Switching Protocols</span>?"	101
+What is the status code for Continue?	100
